@@ -1,0 +1,86 @@
+<?php
+/**
+ * IBPC Canada — Helper Functions
+ */
+
+/**
+ * Sanitize user input for display.
+ */
+function e($string) {
+    return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+}
+
+/**
+ * Get the current page slug from the URI.
+ */
+function currentPage() {
+    $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+    return $uri ?: 'home';
+}
+
+/**
+ * Check if the given page slug matches the current page.
+ */
+function isActivePage($slug) {
+    return currentPage() === $slug ? 'active' : '';
+}
+
+/**
+ * Generate a full asset URL.
+ */
+function asset($path) {
+    return ASSETS_URL . '/' . ltrim($path, '/');
+}
+
+/**
+ * Truncate text to a given length.
+ */
+function excerpt($text, $length = 150) {
+    if (strlen($text) <= $length) return $text;
+    return substr($text, 0, $length) . '…';
+}
+
+/**
+ * Format a date string for display.
+ */
+function formatDate($date, $format = 'F j, Y') {
+    return date($format, strtotime($date));
+}
+
+/**
+ * Check if user is logged in (member session).
+ */
+function isLoggedIn() {
+    return isset($_SESSION['member_id']) && !empty($_SESSION['member_id']);
+}
+
+/**
+ * Redirect to a given URL.
+ */
+function redirect($url) {
+    header('Location: ' . $url);
+    exit;
+}
+
+/**
+ * Verify Google reCAPTCHA response.
+ */
+function verifyRecaptcha($response) {
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $data = [
+        'secret'   => RECAPTCHA_SECRET_KEY,
+        'response' => $response,
+        'remoteip' => $_SERVER['REMOTE_ADDR'],
+    ];
+    $options = [
+        'http' => [
+            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method'  => 'POST',
+            'content' => http_build_query($data),
+        ],
+    ];
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $json = json_decode($result, true);
+    return $json['success'] ?? false;
+}

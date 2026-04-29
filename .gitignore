@@ -1,0 +1,37 @@
+# Claude Code / local AI tooling
+.claude/
+
+# Project documentation / planning files
+*.md
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# PHP dependency folders, if added later
+vendor/
+
+# Node/front-end dependency folders, if added later
+node_modules/
+dist/
+build/
+
+# Logs / temp files
+*.log
+logs/
+tmp/
+.cache/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local database / backups
+*.sqlite
+*.db
+*.bak
+*.backup
+config.php
