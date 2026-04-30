@@ -8,8 +8,12 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Sponsorship';
+$pageHeaderIcon = 'info';
 $breadcrumbs = [['label' => 'About Us', 'url' => '/about-us'], ['label' => 'Sponsorship']];
 include __DIR__ . '/../includes/page-header.php';
+
+$pageTagline = 'Sponsorship opportunities help partners connect with the IBPC Canada network and support high-impact business programming.';
+include __DIR__ . '/../includes/page-tagline.php';
 ?>
 
 <section class="page-content">

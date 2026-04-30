@@ -9,6 +9,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle  = 'Contact Us';
+$pageHeaderIcon   = 'info';
 $breadcrumbs      = [['label' => 'Contact Us']];
 include __DIR__ . '/../includes/page-header.php';
 ?>

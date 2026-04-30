@@ -135,4 +135,48 @@
     });
   });
 
+  // ── Resource page search (Reports, Legislations, Magazines) ──
+  $(document).on('click', '.resource-search-bar .btn-search', function () {
+    var query = $(this).closest('.resource-search-bar').find('input').val().toLowerCase().trim();
+    $(this).closest('section').find('.resource-card-col').each(function () {
+      var title = $(this).find('.resource-body h5').text().toLowerCase();
+      $(this).toggle(!query || title.indexOf(query) !== -1);
+    });
+  });
+  $(document).on('keypress', '.resource-search-bar input', function (e) {
+    if (e.which === 13) $(this).siblings('.btn-search').trigger('click');
+  });
+
+  // ── Upcoming Events filter ──
+  function filterUpcoming() {
+    var query = $('#upcoming-search').val().toLowerCase().trim();
+    var type  = $('#upcoming-type').val().toLowerCase();
+    $('.upcoming-event-item').each(function () {
+      var title    = $(this).find('h4').text().toLowerCase();
+      var cardType = ($(this).data('type') || '').toLowerCase();
+      var matchQ   = !query || title.indexOf(query) !== -1;
+      var matchT   = !type  || cardType === type;
+      $(this).toggle(matchQ && matchT);
+    });
+  }
+  $('#upcoming-search-btn').on('click', filterUpcoming);
+  $('#upcoming-search').on('keypress', function (e) { if (e.which === 13) filterUpcoming(); });
+  $('#upcoming-type').on('change', filterUpcoming);
+
+  // ── Past Events filter ──
+  function filterPast() {
+    var query = $('#past-search').val().toLowerCase().trim();
+    var year  = $('#past-year').val();
+    $('.past-event-item').each(function () {
+      var title    = $(this).find('h4').text().toLowerCase();
+      var cardYear = String($(this).data('year') || '');
+      var matchQ   = !query || title.indexOf(query) !== -1;
+      var matchY   = !year  || cardYear === year;
+      $(this).toggle(matchQ && matchY);
+    });
+  }
+  $('#past-search-btn').on('click', filterPast);
+  $('#past-search').on('keypress', function (e) { if (e.which === 13) filterPast(); });
+  $('#past-year').on('change', filterPast);
+
 })(jQuery);

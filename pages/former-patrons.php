@@ -8,8 +8,12 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Former Patrons';
+$pageHeaderIcon  = 'info';
 $breadcrumbs = [['label' => 'About Us', 'url' => '/about-us'], ['label' => 'Former Patrons']];
 include __DIR__ . '/../includes/page-header.php';
+
+$pageTagline = 'IBPC Canada honours the former patrons whose generous support and guidance helped establish and grow the organization.';
+include __DIR__ . '/../includes/page-tagline.php';
 
 $formerPatrons = [
   ['name' => 'Mr. Rajan Krishnamurthy', 'role' => 'Founding Patron (2018–2022)', 'company' => 'Krishna Holdings Inc.',    'initials' => 'RK'],

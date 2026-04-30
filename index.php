@@ -83,7 +83,7 @@ include __DIR__ . '/includes/header.php';
       <div class="col-lg col-md-4 col-sm-6 col-12">
         <div class="stat-item">
           <div class="stat-label">India-Canada<br>Bilateral Trade</div>
-          <div class="stat-number">$<span class="counter">12</span>B+</div>
+          <div class="stat-number" aria-label="$12 Billion plus CAD annually">$<span class="counter">12</span>B+</div>
           <div class="stat-unit">CAD Annually</div>
         </div>
       </div>
@@ -91,7 +91,7 @@ include __DIR__ . '/includes/header.php';
       <div class="col-lg col-md-4 col-sm-6 col-12">
         <div class="stat-item">
           <div class="stat-label">CECA<br>Projected Growth</div>
-          <div class="stat-number"><span class="counter">50</span>%</div>
+          <div class="stat-number" aria-label="50 percent trade increase"><span class="counter">50</span>%</div>
           <div class="stat-unit">Trade Increase</div>
         </div>
       </div>
@@ -99,7 +99,7 @@ include __DIR__ . '/includes/header.php';
       <div class="col-lg col-md-4 col-sm-6 col-12">
         <div class="stat-item">
           <div class="stat-label">Indian Diaspora<br>in Canada</div>
-          <div class="stat-number"><span class="counter">1.8</span>M+</div>
+          <div class="stat-number" aria-label="1.8 Million plus professionals and families"><span class="counter">1.8</span>M+</div>
           <div class="stat-unit">Professionals &amp; Families</div>
         </div>
       </div>
@@ -107,7 +107,7 @@ include __DIR__ . '/includes/header.php';
       <div class="col-lg col-md-4 col-sm-6 col-12">
         <div class="stat-item">
           <div class="stat-label">Canada's Export<br>Rank to India</div>
-          <div class="stat-number">#<span class="counter">12</span></div>
+          <div class="stat-number" aria-label="Number 12 trading partner">#<span class="counter">12</span></div>
           <div class="stat-unit">Trading Partner</div>
         </div>
       </div>
@@ -115,7 +115,7 @@ include __DIR__ . '/includes/header.php';
       <div class="col-lg col-md-4 col-sm-6 col-12">
         <div class="stat-item">
           <div class="stat-label">Tariff Reductions<br>Under CECA</div>
-          <div class="stat-number"><span class="counter">90</span>%</div>
+          <div class="stat-number" aria-label="90 percent on key goods"><span class="counter">90</span>%</div>
           <div class="stat-unit">On Key Goods</div>
         </div>
       </div>
@@ -243,7 +243,7 @@ include __DIR__ . '/includes/header.php';
 <section class="sec-stats alt-bg" id="statsSingle">
   <div class="container text-center">
     <div class="stat-item">
-      <div class="stat-number"><span class="counter">4</span>+</div>
+      <div class="stat-number" aria-label="4 plus annual events and trade missions"><span class="counter">4</span>+</div>
       <div class="stat-unit" style="font-size:18px; margin-top:10px;">Annual Events &amp; Trade Missions</div>
     </div>
     <p style="max-width:700px; margin:15px auto 0;">IBPC Canada organizes flagship conferences, networking galas, trade missions, and webinars each year — connecting professionals and fostering cross-border business opportunities between India and Canada.</p>

@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Constitution & Articles';
+$pageHeaderIcon  = 'file';
 $breadcrumbs = [['label' => 'About Us', 'url' => '/about-us'], ['label' => 'Constitution & Articles']];
 include __DIR__ . '/../includes/page-header.php';
 

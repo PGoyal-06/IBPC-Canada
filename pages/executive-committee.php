@@ -8,8 +8,12 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Executive Committee';
+$pageHeaderIcon = 'info';
 $breadcrumbs = [['label' => 'About Us', 'url' => '/about-us'], ['label' => 'Executive Committee']];
 include __DIR__ . '/../includes/page-header.php';
+
+$pageTagline = 'The Executive Committee supports day-to-day leadership, execution, and coordination across IBPC Canada initiatives.';
+include __DIR__ . '/../includes/page-tagline.php';
 
 $committee = [
   ['name' => 'Vikash Agarwal',   'role' => 'President',            'company' => 'Agarwal Consulting',       'initials' => 'VA'],

@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Privacy Policy';
+$pageHeaderIcon  = 'file';
 $breadcrumbs = [['label' => 'Privacy Policy']];
 include __DIR__ . '/../includes/page-header.php';
 ?>

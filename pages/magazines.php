@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Magazines';
+$pageHeaderIcon  = 'file';
 $breadcrumbs = [['label' => 'Reports & Legislations'], ['label' => 'Magazines']];
 include __DIR__ . '/../includes/page-header.php';
 
@@ -27,17 +28,23 @@ $magazines = [
     <h3 class="section-title">Magazines</h3>
     <p>The IBPC Canada Business Review is our flagship quarterly publication featuring member profiles, trade intelligence, event highlights, and thought leadership from Canada's Indian business community.</p>
 
-    <div class="row" style="margin-top: 30px;">
+    <div class="resource-search-bar mt-4">
+      <input type="text" placeholder="Search magazines by name…">
+      <button class="btn-1 btn-search">Search</button>
+    </div>
+
+    <div class="row">
       <?php foreach ($magazines as $mag): ?>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card" style="border: 1px solid var(--color-card-border); border-radius: var(--border-radius-card); overflow: hidden;">
-          <div style="height: 200px; background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-accent) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 20px; text-align: center;">
-            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; margin-bottom: 8px;"><?php echo e($mag['issue']); ?></div>
-            <div style="font-size: 16px; font-weight: 700; line-height: 1.3;"><?php echo e($mag['title']); ?></div>
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4 resource-card-col">
+        <div class="resource-card">
+          <div class="resource-thumb">
+            <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+            <span class="resource-type"><?php echo e($mag['issue']); ?></span>
           </div>
-          <div style="padding: 16px; display: flex; align-items: center; justify-content: space-between;">
-            <span style="font-size: 12px; color: #888;"><?php echo e($mag['date']); ?></span>
-            <a href="/login" style="color: var(--color-primary); font-size: 12px; font-weight: 600;">Download PDF →</a>
+          <div class="resource-body">
+            <h5><?php echo e($mag['title']); ?></h5>
+            <div class="resource-meta"><?php echo e($mag['date']); ?></div>
+            <a href="/login" class="btn-1">Download PDF</a>
           </div>
         </div>
       </div>

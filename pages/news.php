@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'News & Media';
+$pageHeaderIcon  = 'megaphone';
 $breadcrumbs = [['label' => 'News & Media']];
 include __DIR__ . '/../includes/page-header.php';
 

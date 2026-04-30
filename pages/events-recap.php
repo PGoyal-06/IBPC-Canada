@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Events Recap & Gallery';
+$pageHeaderIcon  = 'calendar';
 $breadcrumbs = [['label' => 'Events', 'url' => '/events'], ['label' => 'Events Recap']];
 include __DIR__ . '/../includes/page-header.php';
 

@@ -8,8 +8,12 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Patrons';
+$pageHeaderIcon = 'info';
 $breadcrumbs = [['label' => 'About Us', 'url' => '/about-us'], ['label' => 'Patrons']];
 include __DIR__ . '/../includes/page-header.php';
+
+$pageTagline = 'IBPC Canada is guided by respected community and business leaders who support its mission to strengthen India-Canada economic ties.';
+include __DIR__ . '/../includes/page-tagline.php';
 
 // Placeholder patron data — in production this comes from the DB
 $patrons = [

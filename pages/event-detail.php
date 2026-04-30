@@ -13,6 +13,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Event Details';
+$pageHeaderIcon  = 'calendar';
 $breadcrumbs = [
   ['label' => 'Events', 'url' => '/events'], 
   ['label' => $isPast ? 'Past Events' : 'Upcoming Events', 'url' => $isPast ? '/past-events' : '/upcoming-events'],

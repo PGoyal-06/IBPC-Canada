@@ -8,18 +8,30 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Committee Members';
+$pageHeaderIcon = 'info';
 $breadcrumbs = [['label' => 'About Us', 'url' => '/about-us'], ['label' => 'Committee Members']];
 include __DIR__ . '/../includes/page-header.php';
 
-$members = [
-  ['name' => 'Sanjay Verma',    'role' => 'Membership Committee',  'initials' => 'SV'],
-  ['name' => 'Anisha Kaur',     'role' => 'Events Committee',      'initials' => 'AK'],
-  ['name' => 'Rohit Menon',     'role' => 'Finance Committee',     'initials' => 'RM'],
-  ['name' => 'Kavita Saxena',   'role' => 'Communications Committee', 'initials' => 'KS'],
-  ['name' => 'Nikhil Bhatia',   'role' => 'Trade & Policy Committee', 'initials' => 'NB'],
-  ['name' => 'Shreya Pillai',   'role' => 'Youth & Startups Committee','initials' => 'SP'],
-  ['name' => 'Varun Choudhary', 'role' => 'Sponsorship Committee',    'initials' => 'VC'],
-  ['name' => 'Divya Tiwari',    'role' => 'Legal & Compliance',       'initials' => 'DT'],
+$pageTagline = 'Committee members support specialized initiatives, member engagement, events, and organizational development.';
+include __DIR__ . '/../includes/page-tagline.php';
+
+$committees = [
+  'Events Committee' => [
+    ['name' => 'Anisha Kaur',     'initials' => 'AK'],
+    ['name' => 'Shreya Pillai',   'initials' => 'SP'],
+    ['name' => 'Varun Choudhary', 'initials' => 'VC'],
+  ],
+  'Membership Committee' => [
+    ['name' => 'Sanjay Verma',    'initials' => 'SV'],
+    ['name' => 'Divya Tiwari',    'initials' => 'DT'],
+  ],
+  'Trade & Policy Committee' => [
+    ['name' => 'Nikhil Bhatia',   'initials' => 'NB'],
+    ['name' => 'Rohit Menon',     'initials' => 'RM'],
+  ],
+  'Communications Committee' => [
+    ['name' => 'Kavita Saxena',   'initials' => 'KS'],
+  ],
 ];
 ?>
 
@@ -29,19 +41,24 @@ $members = [
     <h3 class="section-title">Committee Members</h3>
     <p>Our dedicated committee members volunteer their time and expertise across various working groups, ensuring IBPC Canada's programs and initiatives are executed with excellence.</p>
 
-    <div class="row">
-      <?php foreach ($members as $person): ?>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="person-card">
-          <div class="person-photo">
-            <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($person['initials']); ?>&size=150&background=ea8825&color=fff&font-size=0.4" alt="<?php echo e($person['name']); ?>">
+    <?php foreach ($committees as $committeeName => $members): ?>
+    <div class="mb-5">
+      <h4 style="color: var(--color-primary); border-bottom: 2px solid var(--color-primary); padding-bottom: 10px; margin-bottom: 30px;"><?php echo e($committeeName); ?></h4>
+      <div class="row">
+        <?php foreach ($members as $person): ?>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="person-card">
+            <div class="person-photo">
+              <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($person['initials']); ?>&size=150&background=252758&color=fff&font-size=0.4" alt="<?php echo e($person['name']); ?>">
+            </div>
+            <h5 class="person-name"><?php echo e($person['name']); ?></h5>
           </div>
-          <h5 class="person-name"><?php echo e($person['name']); ?></h5>
-          <p class="person-role"><?php echo e($person['role']); ?></p>
         </div>
+        <?php endforeach; ?>
       </div>
-      <?php endforeach; ?>
     </div>
+    <?php endforeach; ?>
+
   </div>
 </section>
 

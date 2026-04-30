@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Corporate Members';
+$pageHeaderIcon  = 'users';
 $breadcrumbs = [['label' => 'Be a Member', 'url' => '/be-a-member'], ['label' => 'Corporate Members']];
 include __DIR__ . '/../includes/page-header.php';
 

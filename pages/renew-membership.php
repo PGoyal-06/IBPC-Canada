@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Renew Membership';
+$pageHeaderIcon  = 'users';
 $breadcrumbs = [['label' => 'Be a Member', 'url' => '/be-a-member'], ['label' => 'Renew Membership']];
 include __DIR__ . '/../includes/page-header.php';
 ?>

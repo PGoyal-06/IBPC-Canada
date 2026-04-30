@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Member Login';
+$pageHeaderIcon  = 'users';
 $breadcrumbs = [['label' => 'Member Login']];
 include __DIR__ . '/../includes/page-header.php';
 ?>

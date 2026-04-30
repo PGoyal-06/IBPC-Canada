@@ -8,8 +8,12 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Governing Board';
+$pageHeaderIcon = 'info';
 $breadcrumbs = [['label' => 'About Us', 'url' => '/about-us'], ['label' => 'Governing Board']];
 include __DIR__ . '/../includes/page-header.php';
+
+$pageTagline = 'The Governing Board provides strategic oversight and direction for IBPC Canada’s programs, partnerships, and member initiatives.';
+include __DIR__ . '/../includes/page-tagline.php';
 
 $board = [
   ['name' => 'Rajiv Mehta',        'role' => 'Chairman',              'company' => 'Mehta Industries Canada',  'initials' => 'RM'],

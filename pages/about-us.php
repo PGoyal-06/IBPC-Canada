@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'About Us';
+$pageHeaderIcon = 'info';
 $breadcrumbs = [['label' => 'About Us']];
 include __DIR__ . '/../includes/page-header.php';
 ?>
@@ -39,13 +40,53 @@ include __DIR__ . '/../includes/page-header.php';
         <p>To be the most trusted and influential India-Canada business council, recognized for fostering innovation, driving cross-border investments, and building lasting professional relationships that benefit both nations.</p>
 
         <h2>Our Values</h2>
-        <ul class="styled-list">
-          <li><strong>Integrity:</strong> We uphold the highest standards of ethics and transparency in all our dealings.</li>
-          <li><strong>Collaboration:</strong> We believe in the power of partnerships and collective action.</li>
-          <li><strong>Excellence:</strong> We strive for quality in every initiative, event, and member interaction.</li>
-          <li><strong>Inclusivity:</strong> We welcome professionals from all industries and backgrounds.</li>
-          <li><strong>Impact:</strong> We measure our success by the tangible value we create for members and communities.</li>
-        </ul>
+        <div class="row justify-content-center mt-4 mb-2">
+          <div class="col-sm-6 col-md-4 mb-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h5>Integrity</h5>
+              <p>We uphold the highest standards of ethics and transparency in all our dealings.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 mb-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <h5>Collaboration</h5>
+              <p>We believe in the power of partnerships and collective action.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 mb-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h5>Excellence</h5>
+              <p>We strive for quality in every initiative, event, and member interaction.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 mb-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+              </div>
+              <h5>Inclusivity</h5>
+              <p>We welcome professionals from all industries and backgrounds.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 mb-4">
+            <div class="value-card">
+              <div class="value-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <h5>Impact</h5>
+              <p>We measure our success by the tangible value we create for members and communities.</p>
+            </div>
+          </div>
+        </div>
 
         <h2>What We Do</h2>
         <ul class="styled-list">

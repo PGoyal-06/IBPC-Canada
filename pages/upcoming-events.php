@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Upcoming Events';
+$pageHeaderIcon  = 'calendar';
 $breadcrumbs = [['label' => 'Events', 'url' => '/events'], ['label' => 'Upcoming Events']];
 include __DIR__ . '/../includes/page-header.php';
 
@@ -58,19 +59,21 @@ $upcomingEvents = [
         <p>Register for our upcoming seminars, networking sessions, and flagship summits to connect with industry leaders.</p>
       </div>
       <div class="col-md-4 text-md-end">
-        <div class="mb-3">
-          <select class="form-select" style="max-width: 200px; display: inline-block;">
-            <option value="">All Categories</option>
-            <option value="physical">Physical Events</option>
-            <option value="virtual">Virtual Events</option>
+        <div class="d-flex gap-2 justify-content-md-end flex-wrap mb-3">
+          <input type="text" id="upcoming-search" class="form-control" style="max-width: 180px;" placeholder="Search events…">
+          <select id="upcoming-type" class="form-select" style="max-width: 150px;">
+            <option value="">All Types</option>
+            <option value="physical">Physical</option>
+            <option value="virtual">Virtual</option>
           </select>
+          <button id="upcoming-search-btn" class="btn-1" style="padding: 9px 18px; font-size: 14px; white-space: nowrap;">Search</button>
         </div>
       </div>
     </div>
 
     <div class="row">
       <?php foreach ($upcomingEvents as $event): ?>
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4 upcoming-event-item" data-type="<?php echo strtolower(e($event['type'])); ?>">
         <div class="event-card">
           <div class="img-contr">
             <a href="/event-detail?slug=<?php echo $event['slug']; ?>">

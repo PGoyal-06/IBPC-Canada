@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'AGM Minutes';
+$pageHeaderIcon  = 'file';
 $breadcrumbs = [['label' => 'About Us', 'url' => '/about-us'], ['label' => 'AGM Minutes']];
 include __DIR__ . '/../includes/page-header.php';
 

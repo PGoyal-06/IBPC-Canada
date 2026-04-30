@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'FAQs';
+$pageHeaderIcon  = 'info';
 $breadcrumbs = [['label' => 'FAQs']];
 include __DIR__ . '/../includes/page-header.php';
 

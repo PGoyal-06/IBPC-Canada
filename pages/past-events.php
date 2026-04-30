@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Past Events';
+$pageHeaderIcon  = 'calendar';
 $breadcrumbs = [['label' => 'Events', 'url' => '/events'], ['label' => 'Past Events']];
 include __DIR__ . '/../includes/page-header.php';
 
@@ -69,20 +70,22 @@ $pastEvents = [
         <p>Browse our archive of past events. Read recaps, view photo galleries, and catch up on the insights shared by our speakers.</p>
       </div>
       <div class="col-md-4 text-md-end">
-        <div class="mb-3">
-          <select class="form-select" style="max-width: 200px; display: inline-block;">
+        <div class="d-flex gap-2 justify-content-md-end flex-wrap mb-3">
+          <input type="text" id="past-search" class="form-control" style="max-width: 180px;" placeholder="Search events…">
+          <select id="past-year" class="form-select" style="max-width: 130px;">
             <option value="">All Years</option>
             <option value="2026">2026</option>
             <option value="2025">2025</option>
             <option value="2024">2024</option>
           </select>
+          <button id="past-search-btn" class="btn-1" style="padding: 9px 18px; font-size: 14px; white-space: nowrap;">Search</button>
         </div>
       </div>
     </div>
 
     <div class="row">
       <?php foreach ($pastEvents as $event): ?>
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-lg-4 col-md-6 mb-4 past-event-item" data-year="<?php echo date('Y', strtotime($event['date'])); ?>">
         <div class="event-card">
           <div class="img-contr" style="opacity: 0.85;">
             <a href="/event-detail?slug=<?php echo $event['slug']; ?>">

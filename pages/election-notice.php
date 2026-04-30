@@ -8,6 +8,7 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Election Notice';
+$pageHeaderIcon  = 'megaphone';
 $breadcrumbs = [['label' => 'Elections', 'url' => '/elections'], ['label' => 'Election Notice']];
 include __DIR__ . '/../includes/page-header.php';
 ?>

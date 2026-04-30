@@ -8,8 +8,12 @@ $isHomepage = false;
 include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Focus Groups & Forums';
+$pageHeaderIcon = 'info';
 $breadcrumbs = [['label' => 'About Us', 'url' => '/about-us'], ['label' => 'Focus Groups & Forums']];
 include __DIR__ . '/../includes/page-header.php';
+
+$pageTagline = 'IBPC Canada focus groups and forums bring members together around shared sectors, industries, and business priorities.';
+include __DIR__ . '/../includes/page-tagline.php';
 
 $groups = [
   ['name' => 'Technology & IT Services',     'desc' => 'Connecting Canada\'s tech sector with India\'s IT powerhouses. Focus areas include software development, AI/ML, cybersecurity, and digital transformation partnerships.', 'icon' => '💻'],
