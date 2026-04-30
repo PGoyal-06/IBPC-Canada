@@ -81,42 +81,53 @@
         var original = $btn.text();
         $btn.prop('disabled', true).text('Sending...');
 
-        // reCAPTCHA v3
+        // reCAPTCHA v3 → EmailJS
         if (typeof grecaptcha !== 'undefined') {
           grecaptcha.ready(function() {
             grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'contact'}).then(function(token) {
               $('#recaptcha_token').val(token);
-              submitForm();
+              sendViaEmailJS(form, $btn, original);
             });
           });
         } else {
-          submitForm(); // Fallback if blocked
-        }
-
-        function submitForm() {
-          $.ajax({
-            url: '/api/contact.php',
-            method: 'POST',
-            data: $(form).serialize(),
-            dataType: 'json',
-            success: function (res) {
-              if (res.success) {
-                alert('Thank you! Your message has been sent.');
-                form.reset();
-              } else {
-                alert(res.message || 'Something went wrong. Please try again.');
-              }
-            },
-            error: function () {
-              alert('Network error. Please try again.');
-            },
-            complete: function () {
-              $btn.prop('disabled', false).text(original);
-            },
-          });
+          sendViaEmailJS(form, $btn, original);
         }
       },
     });
+  }
+
+  // ── EmailJS send helper ──
+  function sendViaEmailJS(form, $btn, originalText) {
+    if (typeof emailjs === 'undefined') {
+      alert('Email service is not available. Please try again later.');
+      $btn.prop('disabled', false).text(originalText);
+      return;
+    }
+
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+    // Map form fields to EmailJS template variables
+    var templateParams = {
+      from_name:  form.full_name.value,
+      from_email: form.email.value,
+      phone:      form.phone.value,
+      company:    form.company.value,
+      subject:    'New Contact Inquiry — IBPC Canada',
+      message:    form.message.value
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(function() {
+        alert('Thank you! Your message has been sent.');
+        form.reset();
+      })
+      .catch(function(error) {
+        console.error('EmailJS error:', error);
+        alert('Something went wrong. Please try again.');
+      })
+      .finally(function() {
+        $btn.prop('disabled', false).text(originalText);
+      });
   }
 
   // ── Newsletter form ──

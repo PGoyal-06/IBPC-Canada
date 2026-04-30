@@ -60,9 +60,8 @@ include __DIR__ . '/../includes/page-header.php';
             <textarea id="message" name="message" rows="5"></textarea>
           </div>
 
-          <div class="form-group">
-            <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_SITE_KEY; ?>"></div>
-          </div>
+          <!-- reCAPTCHA v3 Hidden Token -->
+          <input type="hidden" name="recaptcha_token" id="recaptcha_token">
 
           <button type="submit" class="btn-1">Submit</button>
         </form>
@@ -75,7 +74,7 @@ include __DIR__ . '/../includes/page-header.php';
 
         <div class="contact-staff">
           <div class="staff-photo">
-            <img src="https://ui-avatars.com/api/?name=Office+IBPC&size=100&background=1F3D8C&color=fff" alt="IBPC Canada Office">
+            <img src="<?php echo IMG_URL; ?>/contact/contact.jpg" alt="IBPC Canada Office">
           </div>
           <div class="staff-info">
             <div class="staff-name">IBPC Canada Office</div>
@@ -129,5 +128,17 @@ include __DIR__ . '/../includes/page-header.php';
     title="IBPC Canada Office Location">
   </iframe>
 </section>
+
+<!-- Google reCAPTCHA v3 -->
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo RECAPTCHA_SITE_KEY; ?>"></script>
+<script>var RECAPTCHA_SITE_KEY = '<?php echo RECAPTCHA_SITE_KEY; ?>';</script>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  var EMAILJS_SERVICE_ID  = '<?php echo EMAILJS_SERVICE_ID; ?>';
+  var EMAILJS_TEMPLATE_ID = '<?php echo EMAILJS_TEMPLATE_ID; ?>';
+  var EMAILJS_PUBLIC_KEY   = '<?php echo EMAILJS_PUBLIC_KEY; ?>';
+</script>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>

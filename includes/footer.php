@@ -69,7 +69,7 @@
   <div class="copyright">
     <div class="container">
       <span>&copy; <?php echo date('Y'); ?> Indian Business &amp; Professional Council</span>
-      <span>Powered by IBPC Canada</span>
+      <span>Powered by IBPC Canada<br>Designed &amp; Developed by <a href="https://parth-goyal.com/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 600;">Parth Goyal</a></span>
     </div>
   </div>
 </footer>

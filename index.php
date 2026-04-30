@@ -435,7 +435,7 @@ include __DIR__ . '/includes/header.php';
         <!-- Staff Contact -->
         <div class="contact-staff">
           <div class="staff-photo">
-            <img src="https://ui-avatars.com/api/?name=Office+IBPC&size=100&background=1F3D8C&color=fff"
+            <img src="<?php echo IMG_URL; ?>/contact/contact.jpg"
               alt="IBPC Office">
           </div>
           <div class="staff-info">
@@ -492,5 +492,13 @@ include __DIR__ . '/includes/header.php';
 <!-- Google reCAPTCHA v3 -->
 <script src="https://www.google.com/recaptcha/api.js?render=<?php echo RECAPTCHA_SITE_KEY; ?>"></script>
 <script>var RECAPTCHA_SITE_KEY = '<?php echo RECAPTCHA_SITE_KEY; ?>';</script>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  var EMAILJS_SERVICE_ID  = '<?php echo EMAILJS_SERVICE_ID; ?>';
+  var EMAILJS_TEMPLATE_ID = '<?php echo EMAILJS_TEMPLATE_ID; ?>';
+  var EMAILJS_PUBLIC_KEY   = '<?php echo EMAILJS_PUBLIC_KEY; ?>';
+</script>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

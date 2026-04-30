@@ -40,6 +40,11 @@ define('RECAPTCHA_MIN_SCORE', 0.5);
 // ── Google Analytics ──
 define('GA_MEASUREMENT_ID', 'G-XXXXXXXXXX');
 
+// ── EmailJS ──
+define('EMAILJS_SERVICE_ID', 'YOUR_EMAILJS_SERVICE_ID');
+define('EMAILJS_TEMPLATE_ID', 'YOUR_EMAILJS_TEMPLATE_ID');
+define('EMAILJS_PUBLIC_KEY', 'YOUR_EMAILJS_PUBLIC_KEY');
+
 // ── Google Maps ──
 define('GMAPS_EMBED_URL', 'https://www.google.com/maps/embed?pb=YOUR_EMBED_PARAMS');
 
