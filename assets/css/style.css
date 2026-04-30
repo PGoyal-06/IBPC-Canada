@@ -937,6 +937,155 @@ p { margin: 0 0 15px; }
 }
 
 /* ============================================================
+   MEMBERSHIP CATEGORIES PAGE
+   ============================================================ */
+
+/* --- Privileges Grid --- */
+.privileges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+.privilege-item {
+  text-align: center;
+  padding: 25px 15px;
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-card);
+  background: var(--color-white);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.privilege-item:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+.privilege-item .priv-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  color: var(--color-primary);
+}
+.privilege-item .priv-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.privilege-item h5 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: none;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--color-body);
+}
+
+/* --- Tier Cards --- */
+.tier-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+.tier-card {
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-card);
+  background: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.tier-card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+.tier-card-header {
+  padding: 25px 20px;
+  text-align: center;
+  color: var(--color-white);
+}
+.tier-card-header h4 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: inherit;
+  text-transform: uppercase;
+}
+.tier-card-header span {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.9;
+  text-transform: none;
+}
+.tier-card-body {
+  padding: 25px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.tier-card-body > p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.tier-card-body h6 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-body);
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #eee;
+}
+.tier-card-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+.tier-card-body ul li {
+  font-size: 13px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f3f3f3;
+  color: #444;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.tier-card-body ul li::before {
+  content: '✓';
+  color: var(--color-accent-green);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.tier-card-body ul li:last-child {
+  border-bottom: none;
+}
+.tier-card-footer {
+  padding: 0 20px 25px;
+  text-align: center;
+  margin-top: auto;
+}
+.tier-card-footer .btn-1 {
+  width: 100%;
+  text-align: center;
+}
+
+/* Tier card accent colors */
+.tier-card--diamond .tier-card-header { background: linear-gradient(135deg, #F39200, #e68400); }
+.tier-card--corporate .tier-card-header { background: linear-gradient(135deg, var(--color-primary), #162C66); }
+.tier-card--general .tier-card-header { background: linear-gradient(135deg, #555, #333); }
+
+/* --- Responsive --- */
+@media (max-width: 991px) {
+  .privileges-grid { grid-template-columns: repeat(2, 1fr); }
+  .tier-cards { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+}
+@media (max-width: 575px) {
+  .privileges-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 991px) {

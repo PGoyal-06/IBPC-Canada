@@ -63,15 +63,19 @@ function redirect($url) {
 }
 
 /**
- * Verify Google reCAPTCHA response.
+ * Verify Google reCAPTCHA v3 response.
+ * Requires success, matching action, and score above threshold.
  */
-function verifyRecaptcha($response) {
+function verifyRecaptcha($token, $action = 'contact') {
+    if (empty($token)) return false;
+
     $url = 'https://www.google.com/recaptcha/api/siteverify';
     $data = [
         'secret'   => RECAPTCHA_SECRET_KEY,
-        'response' => $response,
-        'remoteip' => $_SERVER['REMOTE_ADDR'],
+        'response' => $token,
+        'remoteip' => $_SERVER['REMOTE_ADDR'] ?? '',
     ];
+
     $options = [
         'http' => [
             'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
@@ -79,8 +83,19 @@ function verifyRecaptcha($response) {
             'content' => http_build_query($data),
         ],
     ];
+
     $context = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     $json = json_decode($result, true);
-    return $json['success'] ?? false;
+
+    if (!$json || !isset($json['success']) || !$json['success']) {
+        return false;
+    }
+
+    // Verify action and score for v3
+    $score  = $json['score']  ?? 0;
+    $act    = $json['action'] ?? '';
+    $min    = defined('RECAPTCHA_MIN_SCORE') ? RECAPTCHA_MIN_SCORE : 0.5;
+
+    return ($act === $action && $score >= $min);
 }

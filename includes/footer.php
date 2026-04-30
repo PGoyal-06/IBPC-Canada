@@ -75,7 +75,7 @@
 </footer>
 
 <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/<?php echo WHATSAPP_NUMBER; ?>" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/<?php echo WHATSAPP_NUMBER; ?>?text=<?php echo urlencode('Hello IBPC Canada, I would like to learn more about your membership and services.'); ?>" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with IBPC Canada on WhatsApp">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
 
@@ -87,7 +87,6 @@
 <script src="<?php echo JS_URL; ?>/jquery.counterup.min.js"></script>
 <script src="<?php echo JS_URL; ?>/jquery.validate.min.js"></script>
 <script src="<?php echo JS_URL; ?>/bootstrap-datepicker.min.js"></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="<?php echo JS_URL; ?>/header.js"></script>
 <script src="<?php echo JS_URL; ?>/main.js"></script>
 </body>

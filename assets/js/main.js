@@ -81,26 +81,40 @@
         var original = $btn.text();
         $btn.prop('disabled', true).text('Sending...');
 
-        $.ajax({
-          url: '/api/contact.php',
-          method: 'POST',
-          data: $(form).serialize(),
-          dataType: 'json',
-          success: function (res) {
-            if (res.success) {
-              alert('Thank you! Your message has been sent.');
-              form.reset();
-            } else {
-              alert(res.message || 'Something went wrong. Please try again.');
-            }
-          },
-          error: function () {
-            alert('Network error. Please try again.');
-          },
-          complete: function () {
-            $btn.prop('disabled', false).text(original);
-          },
-        });
+        // reCAPTCHA v3
+        if (typeof grecaptcha !== 'undefined') {
+          grecaptcha.ready(function() {
+            grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'contact'}).then(function(token) {
+              $('#recaptcha_token').val(token);
+              submitForm();
+            });
+          });
+        } else {
+          submitForm(); // Fallback if blocked
+        }
+
+        function submitForm() {
+          $.ajax({
+            url: '/api/contact.php',
+            method: 'POST',
+            data: $(form).serialize(),
+            dataType: 'json',
+            success: function (res) {
+              if (res.success) {
+                alert('Thank you! Your message has been sent.');
+                form.reset();
+              } else {
+                alert(res.message || 'Something went wrong. Please try again.');
+              }
+            },
+            error: function () {
+              alert('Network error. Please try again.');
+            },
+            complete: function () {
+              $btn.prop('disabled', false).text(original);
+            },
+          });
+        }
       },
     });
   }

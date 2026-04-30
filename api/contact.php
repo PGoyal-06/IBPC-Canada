@@ -37,10 +37,10 @@ if (!empty($errors)) {
     exit;
 }
 
-// reCAPTCHA check (skip if key is still the placeholder)
-if (RECAPTCHA_SECRET_KEY !== 'YOUR_RECAPTCHA_SECRET_KEY') {
-    $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
-    if (!verifyRecaptcha($recaptchaResponse)) {
+// reCAPTCHA v3 check (skip if key is still the placeholder)
+if (RECAPTCHA_SECRET_KEY !== 'YOUR_RECAPTCHA_V3_SECRET_KEY') {
+    $token = $_POST['recaptcha_token'] ?? '';
+    if (!verifyRecaptcha($token, 'contact')) {
         http_response_code(422);
         echo json_encode(['success' => false, 'message' => 'reCAPTCHA verification failed. Please try again.']);
         exit;

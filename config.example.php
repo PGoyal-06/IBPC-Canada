@@ -32,9 +32,10 @@ define('SMTP_FROM', 'office@ibpccanada.com');
 define('SMTP_FROM_NAME', 'IBPC Canada');
 define('ADMIN_EMAIL', 'your_email_address_here');
 
-// ── Google reCAPTCHA v2 ──
-define('RECAPTCHA_SITE_KEY', 'YOUR_RECAPTCHA_SITE_KEY');
-define('RECAPTCHA_SECRET_KEY', 'YOUR_RECAPTCHA_SECRET_KEY');
+// ── Google reCAPTCHA v3 ──
+define('RECAPTCHA_SITE_KEY', 'YOUR_RECAPTCHA_V3_SITE_KEY');
+define('RECAPTCHA_SECRET_KEY', 'YOUR_RECAPTCHA_V3_SECRET_KEY');
+define('RECAPTCHA_MIN_SCORE', 0.5);
 
 // ── Google Analytics ──
 define('GA_MEASUREMENT_ID', 'G-XXXXXXXXXX');
@@ -43,12 +44,12 @@ define('GA_MEASUREMENT_ID', 'G-XXXXXXXXXX');
 define('GMAPS_EMBED_URL', 'https://www.google.com/maps/embed?pb=YOUR_EMBED_PARAMS');
 
 // ── Contact Info ──
-define('OFFICE_ADDRESS', '123 Business Avenue, Suite 200, Toronto, ON M5V 2T6, Canada');
-define('OFFICE_PHONE', '+1 (416) 555-0100');
-define('OFFICE_MOBILE', '+1 (416) 555-0101');
-define('OFFICE_EMAIL', 'info@ibpccanada.com');
+define('OFFICE_ADDRESS', 'YOUR_OFFICE_ADDRESS');
+define('OFFICE_PHONE', '+1 YOUR_PHONE_NUMBER');
+define('OFFICE_MOBILE', '+1 YOUR_MOBILE_NUMBER');
+define('OFFICE_EMAIL', 'your_contact_email@example.com');
 define('OFFICE_HOURS', 'Monday – Friday: 9:00 AM – 5:00 PM EST');
-define('WHATSAPP_NUMBER', '14165550100');
+define('WHATSAPP_NUMBER', 'YOUR_WHATSAPP_NUMBER_RAW');
 
 // ── Asset Paths ──
 define('ASSETS_URL', '/assets');

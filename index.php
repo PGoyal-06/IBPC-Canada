@@ -18,36 +18,42 @@ include __DIR__ . '/includes/header.php';
     <div class="slide" style="background-image: url('/bannerimg/banner1.png');">
       <div class="overlay"></div>
       <div class="container">
-        <div class="row"><div class="col-lg-12">
-          <div class="banner">
-            <h1>India-Canada Business Networking Reception</h1>
-            <p>March 15, 2026 — Toronto, ON</p>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="banner">
+              <h1>India-Canada Business Networking Reception</h1>
+              <p>March 15, 2026 — Toronto, ON</p>
+            </div>
           </div>
-        </div></div>
+        </div>
       </div>
     </div>
 
     <div class="slide" style="background-image: url('/bannerimg/banner2.png');">
       <div class="overlay"></div>
       <div class="container">
-        <div class="row"><div class="col-lg-12">
-          <div class="banner">
-            <h2>India-Canada Trade Summit 2026</h2>
-            <p>January 28, 2026 — Vancouver, BC</p>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="banner">
+              <h2>India-Canada Trade Summit 2026</h2>
+              <p>January 28, 2026 — Vancouver, BC</p>
+            </div>
           </div>
-        </div></div>
+        </div>
       </div>
     </div>
 
     <div class="slide" style="background-image: url('/bannerimg/banner3.png');">
       <div class="overlay"></div>
       <div class="container">
-        <div class="row"><div class="col-lg-12">
-          <div class="banner">
-            <h2>Annual IBPC Canada Gala Dinner</h2>
-            <p>November 10, 2025 — Toronto, ON</p>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="banner">
+              <h2>Annual IBPC Canada Gala Dinner</h2>
+              <p>November 10, 2025 — Toronto, ON</p>
+            </div>
           </div>
-        </div></div>
+        </div>
       </div>
     </div>
 
@@ -59,11 +65,17 @@ include __DIR__ . '/includes/header.php';
      ============================================================ -->
 <section class="sec-about" id="aboutSection">
   <div class="container">
-    <p>The India Business &amp; Professional Council (IBPC) Canada is a premier member-based business association representing Indian businessmen and professionals across Canada. We serve as a trusted facilitator for India-Canada bilateral trade and economic relationships.</p>
+    <p>The India Business &amp; Professional Council (IBPC) Canada is a premier member-based business association
+      representing Indian businessmen and professionals across Canada. We serve as a trusted facilitator for
+      India-Canada bilateral trade and economic relationships.</p>
 
-    <p>Established to strengthen the growing economic partnership between India and Canada, IBPC Canada provides a dynamic platform for networking, business matchmaking, trade facilitation, and knowledge exchange. Our members include industry leaders, entrepreneurs, executives, and professionals spanning diverse sectors.</p>
+    <p>Established to strengthen the growing economic partnership between India and Canada, IBPC Canada provides a
+      dynamic platform for networking, business matchmaking, trade facilitation, and knowledge exchange. Our members
+      include industry leaders, entrepreneurs, executives, and professionals spanning diverse sectors.</p>
 
-    <p>Through strategic initiatives, high-impact events, and thought leadership, IBPC Canada actively promotes cross-border investment, innovation, and collaboration — contributing to the prosperity of both nations and the Indian diaspora in Canada.</p>
+    <p>Through strategic initiatives, high-impact events, and thought leadership, IBPC Canada actively promotes
+      cross-border investment, innovation, and collaboration — contributing to the prosperity of both nations and the
+      Indian diaspora in Canada.</p>
 
     <div class="cta-links">
       <a href="/about-us">Learn More About IBPC Canada</a>
@@ -99,7 +111,8 @@ include __DIR__ . '/includes/header.php';
       <div class="col-lg col-md-4 col-sm-6 col-12">
         <div class="stat-item">
           <div class="stat-label">Indian Diaspora<br>in Canada</div>
-          <div class="stat-number" aria-label="1.8 Million plus professionals and families"><span class="counter">1.8</span>M+</div>
+          <div class="stat-number" aria-label="1.8 Million plus professionals and families"><span
+              class="counter">1.8</span>M+</div>
           <div class="stat-unit">Professionals &amp; Families</div>
         </div>
       </div>
@@ -151,11 +164,21 @@ include __DIR__ . '/includes/header.php';
             </div>
             <ul class="category-info">
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
                 February 20, 2026
               </li>
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
                 Metro Toronto Convention Centre
               </li>
             </ul>
@@ -179,11 +202,21 @@ include __DIR__ . '/includes/header.php';
             </div>
             <ul class="category-info">
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
                 January 15, 2026
               </li>
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
                 Online (Zoom)
               </li>
             </ul>
@@ -207,11 +240,21 @@ include __DIR__ . '/includes/header.php';
             </div>
             <ul class="category-info">
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
                 November 10, 2025
               </li>
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
                 Fairmont Royal York, Toronto
               </li>
             </ul>
@@ -230,7 +273,9 @@ include __DIR__ . '/includes/header.php';
   <div class="container">
     <h2 class="section-label">Membership</h2>
     <h3 class="section-title">Be a Member</h3>
-    <p>Join IBPC Canada's growing community of business leaders, entrepreneurs, and professionals driving India-Canada bilateral trade. As a member, you gain access to exclusive networking events, trade delegations, business matchmaking, and industry insights that open doors to new markets and partnerships.</p>
+    <p>Join IBPC Canada's growing community of business leaders, entrepreneurs, and professionals driving India-Canada
+      bilateral trade. As a member, you gain access to exclusive networking events, trade delegations, business
+      matchmaking, and industry insights that open doors to new markets and partnerships.</p>
     <div class="member-photo">
       <img src="<?php echo IMG_URL; ?>/home/members-group.png" alt="IBPC Canada Members">
     </div>
@@ -243,17 +288,21 @@ include __DIR__ . '/includes/header.php';
 <section class="sec-stats alt-bg" id="statsSingle">
   <div class="container text-center">
     <div class="stat-item">
-      <div class="stat-number" aria-label="4 plus annual events and trade missions"><span class="counter">4</span>+</div>
+      <div class="stat-number" aria-label="4 plus annual events and trade missions"><span class="counter">4</span>+
+      </div>
       <div class="stat-unit" style="font-size:18px; margin-top:10px;">Annual Events &amp; Trade Missions</div>
     </div>
-    <p style="max-width:700px; margin:15px auto 0;">IBPC Canada organizes flagship conferences, networking galas, trade missions, and webinars each year — connecting professionals and fostering cross-border business opportunities between India and Canada.</p>
+    <p style="max-width:700px; margin:15px auto 0;">IBPC Canada organizes flagship conferences, networking galas, trade
+      missions, and webinars each year — connecting professionals and fostering cross-border business opportunities
+      between India and Canada.</p>
   </div>
 </section>
 
 <!-- ============================================================
      SECTION 7: CTA BANNER (Join Network)
      ============================================================ -->
-<section class="sec-cta-banner" id="ctaBanner" style="background-image: url('<?php echo IMG_URL; ?>/home/cta-banner-bg.png');">
+<section class="sec-cta-banner" id="ctaBanner"
+  style="background-image: url('<?php echo IMG_URL; ?>/home/cta-banner-bg.png');">
   <div class="overlay"></div>
   <div class="container">
     <div class="row align-items-center">
@@ -287,27 +336,34 @@ include __DIR__ . '/includes/header.php';
 
           <div class="testimonial-item">
             <div class="img-contr">
-              <img src="https://ui-avatars.com/api/?name=Rajiv+Mehta&size=150&background=1F3D8C&color=fff" alt="Rajiv Mehta">
+              <img src="https://ui-avatars.com/api/?name=Rajiv+Mehta&size=150&background=1F3D8C&color=fff"
+                alt="Rajiv Mehta">
             </div>
-            <p class="quote">"IBPC Canada has been instrumental in bridging the gap between Indian and Canadian businesses. The networking opportunities and trade facilitation services are unparalleled."</p>
+            <p class="quote">"IBPC Canada has been instrumental in bridging the gap between Indian and Canadian
+              businesses. The networking opportunities and trade facilitation services are unparalleled."</p>
             <p class="name">Rajiv Mehta</p>
             <p class="role">Chairman, IBPC Canada</p>
           </div>
 
           <div class="testimonial-item">
             <div class="img-contr">
-              <img src="https://ui-avatars.com/api/?name=Priya+Sharma&size=150&background=1F3D8C&color=fff" alt="Priya Sharma">
+              <img src="https://ui-avatars.com/api/?name=Priya+Sharma&size=150&background=1F3D8C&color=fff"
+                alt="Priya Sharma">
             </div>
-            <p class="quote">"As a member, I've gained invaluable connections that have directly contributed to our company's expansion into the Indian market. IBPC Canada is a must-join for any serious business professional."</p>
+            <p class="quote">"As a member, I've gained invaluable connections that have directly contributed to our
+              company's expansion into the Indian market. IBPC Canada is a must-join for any serious business
+              professional."</p>
             <p class="name">Priya Sharma</p>
             <p class="role">Vice President, IBPC Canada</p>
           </div>
 
           <div class="testimonial-item">
             <div class="img-contr">
-              <img src="https://ui-avatars.com/api/?name=Anil+Kapoor&size=150&background=1F3D8C&color=fff" alt="Anil Kapoor">
+              <img src="https://ui-avatars.com/api/?name=Anil+Kapoor&size=150&background=1F3D8C&color=fff"
+                alt="Anil Kapoor">
             </div>
-            <p class="quote">"The India-Canada trade corridor is one of the most promising in the world. IBPC Canada stands at the forefront, creating pathways for meaningful business collaboration."</p>
+            <p class="quote">"The India-Canada trade corridor is one of the most promising in the world. IBPC Canada
+              stands at the forefront, creating pathways for meaningful business collaboration."</p>
             <p class="name">Anil Kapoor</p>
             <p class="role">Secretary General, IBPC Canada</p>
           </div>
@@ -364,10 +420,8 @@ include __DIR__ . '/includes/header.php';
             <textarea id="message" name="message" rows="5"></textarea>
           </div>
 
-          <!-- reCAPTCHA -->
-          <div class="form-group">
-            <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_SITE_KEY; ?>"></div>
-          </div>
+          <!-- reCAPTCHA v3 Hidden Token -->
+          <input type="hidden" name="recaptcha_token" id="recaptcha_token">
 
           <button type="submit" class="btn-1">Submit</button>
         </form>
@@ -381,7 +435,8 @@ include __DIR__ . '/includes/header.php';
         <!-- Staff Contact -->
         <div class="contact-staff">
           <div class="staff-photo">
-            <img src="https://ui-avatars.com/api/?name=Office+IBPC&size=100&background=1F3D8C&color=fff" alt="IBPC Office">
+            <img src="https://ui-avatars.com/api/?name=Office+IBPC&size=100&background=1F3D8C&color=fff"
+              alt="IBPC Office">
           </div>
           <div class="staff-info">
             <div class="staff-name">IBPC Canada Office</div>
@@ -425,18 +480,17 @@ include __DIR__ . '/includes/header.php';
      ============================================================ -->
 <section class="sec-map" id="mapSection">
   <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.269!2d-79.383!3d43.653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDM5JzEwLjgiTiA3OcKwMjInNTkuMCJX!5e0!3m2!1sen!2sca!4v1"
-    width="100%"
-    height="400"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    title="IBPC Canada Office Location">
+    src="<?php echo GMAPS_EMBED_URL; ?>"
+    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade" title="IBPC Canada Office Location">
   </iframe>
 </section>
 
 <!-- ============================================================
      SECTION 11: FOOTER (included globally)
      ============================================================ -->
+<!-- Google reCAPTCHA v3 -->
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo RECAPTCHA_SITE_KEY; ?>"></script>
+<script>var RECAPTCHA_SITE_KEY = '<?php echo RECAPTCHA_SITE_KEY; ?>';</script>
+
 <?php include __DIR__ . '/includes/footer.php'; ?>
