@@ -13,14 +13,14 @@ $breadcrumbs = [['label' => 'Be a Member', 'url' => '/be-a-member'], ['label' =>
 include __DIR__ . '/../includes/page-header.php';
 ?>
 
-<section class="page-content">
+<section class="page-content" id="fees">
   <div class="container">
     <h2 class="section-label">Membership</h2>
     <h3 class="section-title">Membership Categories</h3>
     <p>IBPC Canada offers three membership tiers designed to meet the needs of individuals, growing businesses, and established enterprises. All tiers share the same core mission: accelerating India-Canada trade and building lasting professional relationships.</p>
 
     <!-- Comparison Table -->
-    <div style="overflow-x: auto; margin-top: 30px;">
+    <div id="benefits" style="overflow-x: auto; margin-top: 30px;">
       <table style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 600px;">
         <thead>
           <tr>

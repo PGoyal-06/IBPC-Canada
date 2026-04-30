@@ -27,7 +27,7 @@ include __DIR__ . '/../includes/page-header.php';
 </section>
 
 <!-- Membership Tiers Overview -->
-<section class="page-content">
+<section class="page-content" id="tiers">
   <div class="container">
     <h2 class="section-label">Membership</h2>
     <h3 class="section-title">Choose Your Tier</h3>
