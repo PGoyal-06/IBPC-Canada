@@ -58,32 +58,13 @@ $posts = [
 ];
 ?>
 
-<section class="page-content">
+<section class="coming-soon-section">
   <div class="container">
-    <h2 class="section-label">Thought Leadership</h2>
-    <h3 class="section-title">Our Blog</h3>
-
-    <div class="row">
-      <?php foreach ($posts as $post): ?>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card" style="border: 1px solid var(--color-card-border); border-radius: var(--border-radius-card); overflow: hidden; height: 100%; display: flex; flex-direction: column;">
-          <div style="height: 180px; background: linear-gradient(135deg, #2d5a27 0%, var(--color-accent-green) 100%); display: flex; align-items: center; justify-content: center;">
-            <span style="color: rgba(255,255,255,0.3); font-size: 48px;">✍️</span>
-          </div>
-          <div style="padding: 20px; flex: 1; display: flex; flex-direction: column;">
-            <div style="margin-bottom: 10px;">
-              <span style="background: var(--color-bg-light); color: var(--color-primary); font-size: 11px; font-weight: 600; text-transform: uppercase; padding: 3px 8px; border-radius: 3px;"><?php echo e($post['tag']); ?></span>
-            </div>
-            <h5 style="font-size: 15px; font-weight: 700; text-transform: none; margin-bottom: 8px; line-height: 1.4;"><?php echo e($post['title']); ?></h5>
-            <p style="font-size: 12px; color: #999; margin-bottom: 8px;">By <?php echo e($post['author']); ?> &nbsp;·&nbsp; <?php echo formatDate($post['date']); ?></p>
-            <p style="font-size: 13px; color: #666; flex: 1; line-height: 1.6;"><?php echo e($post['excerpt']); ?></p>
-            <a href="#" style="color: var(--color-primary); font-size: 13px; font-weight: 600; margin-top: 12px;">Read More →</a>
-          </div>
-        </div>
-      </div>
-      <?php endforeach; ?>
+    <div class="coming-soon-card">
+      <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <h2>Coming Soon</h2>
+      <p>IBPC Canada blog posts and thought leadership articles will be added soon.</p>
     </div>
-
   </div>
 </section>
 

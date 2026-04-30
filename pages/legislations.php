@@ -24,40 +24,13 @@ $legislations = [
 ];
 ?>
 
-<section class="page-content">
+<section class="coming-soon-section">
   <div class="container">
-    <h2 class="section-label">Regulatory</h2>
-    <h3 class="section-title">Legislations</h3>
-    <p>A curated collection of Canadian and Indian legislative documents relevant to bilateral trade, investment, and business operations. IBPC Canada provides these resources to help members stay informed of the regulatory landscape.</p>
-
-    <div class="resource-search-bar mt-4">
-      <input type="text" placeholder="Search legislations by name…">
-      <button class="btn-1 btn-search">Search</button>
+    <div class="coming-soon-card">
+      <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <h2>Coming Soon</h2>
+      <p>IBPC Canada legislations and regulatory resources will be added soon.</p>
     </div>
-
-    <div class="row">
-      <?php foreach ($legislations as $leg): ?>
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4 resource-card-col">
-        <div class="resource-card">
-          <div class="resource-thumb">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="11" y2="17"/></svg>
-            <span class="resource-type"><?php echo e($leg['category']); ?></span>
-          </div>
-          <div class="resource-body">
-            <h5><?php echo e($leg['title']); ?></h5>
-            <div class="resource-meta"><?php echo e($leg['date']); ?></div>
-            <a href="/login" class="btn-1">View Document</a>
-          </div>
-        </div>
-      </div>
-      <?php endforeach; ?>
-    </div>
-
-    <p style="margin-top: 10px; font-size: 13px; color: #888;">
-      * Full documents are available to IBPC Canada members.
-      <a href="/login" style="color: var(--color-primary); font-weight: 600;">Login</a> or
-      <a href="/membership-application" style="color: var(--color-primary); font-weight: 600;">apply for membership</a>.
-    </p>
   </div>
 </section>
 

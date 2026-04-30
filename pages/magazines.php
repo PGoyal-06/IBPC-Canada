@@ -22,40 +22,13 @@ $magazines = [
 ];
 ?>
 
-<section class="page-content">
+<section class="coming-soon-section">
   <div class="container">
-    <h2 class="section-label">Publications</h2>
-    <h3 class="section-title">Magazines</h3>
-    <p>The IBPC Canada Business Review is our flagship quarterly publication featuring member profiles, trade intelligence, event highlights, and thought leadership from Canada's Indian business community.</p>
-
-    <div class="resource-search-bar mt-4">
-      <input type="text" placeholder="Search magazines by name…">
-      <button class="btn-1 btn-search">Search</button>
+    <div class="coming-soon-card">
+      <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <h2>Coming Soon</h2>
+      <p>IBPC Canada magazines and publications will be added soon.</p>
     </div>
-
-    <div class="row">
-      <?php foreach ($magazines as $mag): ?>
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4 resource-card-col">
-        <div class="resource-card">
-          <div class="resource-thumb">
-            <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-            <span class="resource-type"><?php echo e($mag['issue']); ?></span>
-          </div>
-          <div class="resource-body">
-            <h5><?php echo e($mag['title']); ?></h5>
-            <div class="resource-meta"><?php echo e($mag['date']); ?></div>
-            <a href="/login" class="btn-1">Download PDF</a>
-          </div>
-        </div>
-      </div>
-      <?php endforeach; ?>
-    </div>
-
-    <p style="margin-top: 10px; font-size: 13px; color: #888;">
-      * Magazines are available to IBPC Canada members.
-      <a href="/login" style="color: var(--color-primary); font-weight: 600;">Login</a> or
-      <a href="/membership-application" style="color: var(--color-primary); font-weight: 600;">apply for membership</a>.
-    </p>
   </div>
 </section>
 
