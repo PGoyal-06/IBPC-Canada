@@ -27,7 +27,7 @@ $patrons = [
 <section class="page-content">
   <div class="container">
     <h2 class="section-label">Leadership</h2>
-    <h3 class="section-title">Our Patrons</h3>
+    <h3 class="section-title">IBPC CANADA PATRONS</h3>
     <p>IBPC Canada is proud to be guided by distinguished leaders from government, industry, and the diplomatic community who share our vision of strengthening India-Canada economic relations.</p>
 
     <div class="row">

@@ -27,21 +27,61 @@ $groups = [
 
 <section class="page-content">
   <div class="container">
-    <h2 class="section-label">Sectors</h2>
-    <h3 class="section-title">Focus Groups &amp; Forums</h3>
-    <p>IBPC Canada operates specialized focus groups that bring together industry leaders to address sector-specific opportunities and challenges in India-Canada trade. Each group is led by experienced professionals and meets regularly to develop actionable strategies.</p>
+    <h2 class="section-label">Focus Groups</h2>
+    <h3 class="section-title">Focus Groups & Forums</h3>
+    <p>IBPC Canada operates specialized focus groups and forums that bring together industry leaders to address sector-specific opportunities and challenges in India-Canada trade. Each group is led by experienced professionals and meets regularly to develop actionable strategies.</p>
 
-    <div class="row" style="margin-top: 30px;">
-      <?php foreach ($groups as $group): ?>
-      <div class="col-lg-4 col-md-6">
-        <div class="person-card" style="text-align: left; padding: 30px;">
-          <div style="font-size: 36px; margin-bottom: 12px;"><?php echo $group['icon']; ?></div>
-          <h5 class="person-name" style="font-size: 18px;"><?php echo e($group['name']); ?></h5>
-          <p class="person-bio" style="margin-top: 8px;"><?php echo e($group['desc']); ?></p>
+    <h4 style="color: var(--color-primary); border-bottom: 2px solid var(--color-primary); padding-bottom: 10px; margin-top: 50px; margin-bottom: 30px;">FOCUS GROUP</h4>
+    
+    <div class="row">
+      <?php
+      $focus_groups = [
+        ['name' => 'Convener Placeholder 1', 'role' => 'Technology, Digital & Innovation', 'initials' => 'CP'],
+        ['name' => 'Convener Placeholder 2', 'role' => 'Healthcare, Education, Wellness & Pharma', 'initials' => 'CP'],
+        ['name' => 'Convener Placeholder 3', 'role' => 'Professional & Business Services', 'initials' => 'CP'],
+        ['name' => 'Convener Placeholder 4', 'role' => 'Real Assets & Built Environment', 'initials' => 'CP'],
+        ['name' => 'Convener Placeholder 5', 'role' => 'Retail, Hospitality & Tourism', 'initials' => 'CP'],
+        ['name' => 'Convener Placeholder 6', 'role' => 'Energy & Climate', 'initials' => 'CP'],
+        ['name' => 'Convener Placeholder 7', 'role' => 'Financial Services & Capital Markets', 'initials' => 'CP'],
+        ['name' => 'Convener Placeholder 8', 'role' => 'Trade, Logistics & Industrial Value Chains', 'initials' => 'CP'],
+      ];
+      foreach ($focus_groups as $conv):
+      ?>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="person-card" style="padding: 20px 15px;">
+          <div class="person-photo" style="width: 90px; height: 90px; border-width: 2px; margin-bottom: 12px;">
+            <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($conv['initials']); ?>&size=150&background=1F3D8C&color=fff&font-size=0.4" alt="<?php echo e($conv['name']); ?>">
+          </div>
+          <h5 class="person-name" style="font-size: 15px; margin-bottom: 2px;"><?php echo e($conv['name']); ?></h5>
+          <p class="person-role" style="font-size: 12px; color: #666; font-weight: 400; margin-bottom: 0; min-height: 36px; display: flex; align-items: center; justify-content: center;"><?php echo e($conv['role']); ?></p>
+          <a href="#" style="color: var(--color-primary); font-size: 11px; font-weight: 700; margin-top: 10px; display: inline-block; text-transform: uppercase;">View Profile →</a>
         </div>
       </div>
       <?php endforeach; ?>
     </div>
+
+    <h4 style="color: var(--color-primary); border-bottom: 2px solid var(--color-primary); padding-bottom: 10px; margin-top: 40px; margin-bottom: 30px;">FORUMS</h4>
+    
+    <div class="row">
+      <?php
+      $forums = [
+        ['name' => 'Convener Placeholder 9', 'role' => 'CSR Forum, Corporate Social Responsibility', 'initials' => 'CP'],
+      ];
+      foreach ($forums as $conv):
+      ?>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="person-card" style="padding: 20px 15px;">
+          <div class="person-photo" style="width: 90px; height: 90px; border-width: 2px; margin-bottom: 12px;">
+            <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($conv['initials']); ?>&size=150&background=1F3D8C&color=fff&font-size=0.4" alt="<?php echo e($conv['name']); ?>">
+          </div>
+          <h5 class="person-name" style="font-size: 15px; margin-bottom: 2px;"><?php echo e($conv['name']); ?></h5>
+          <p class="person-role" style="font-size: 12px; color: #666; font-weight: 400; margin-bottom: 0; min-height: 36px; display: flex; align-items: center; justify-content: center;"><?php echo e($conv['role']); ?></p>
+          <a href="#" style="color: var(--color-primary); font-size: 11px; font-weight: 700; margin-top: 10px; display: inline-block; text-transform: uppercase;">View Profile →</a>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+
   </div>
 </section>
 

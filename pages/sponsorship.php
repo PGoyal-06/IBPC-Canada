@@ -19,53 +19,48 @@ include __DIR__ . '/../includes/page-tagline.php';
 <section class="page-content">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <h2 class="section-label">Partner With Us</h2>
-        <h3 class="section-title">Sponsorship Opportunities</h3>
+      <div class="col-lg-10 offset-lg-1 text-center">
+        <h3 class="section-title">SPONSORSHIP</h3>
+        <p style="font-size: 16px; margin-bottom: 50px;">IBPC Canada is grateful to its generous sponsors for their continued support and welcomes new sponsors.</p>
 
-        <p>IBPC Canada offers multiple sponsorship tiers for organizations looking to connect with the India-Canada business community. Our events and initiatives provide high-visibility platforms for brand exposure, networking, and thought leadership.</p>
+        <!-- Sponsor Board Composition -->
+        <div style="background: #fdfdfd; border: 1px solid #eaeaea; border-radius: 8px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+          
+          <h4 style="text-transform: uppercase; letter-spacing: 2px; color: var(--color-primary); font-size: 14px; margin-bottom: 25px;">Platinum Sponsors</h4>
+          <div class="row justify-content-center mb-5">
+            <?php for ($i = 1; $i <= 3; $i++): ?>
+            <div class="col-md-3 col-6 mb-3">
+              <div style="padding: 15px; border: 1px solid #eee; border-radius: 4px; background: #fff; height: 100%; display: flex; align-items: center; justify-content: center;">
+                <img src="https://placehold.co/200x100/ffffff/555555?text=Sponsor+Logo" alt="Sponsor Logo" style="max-width: 100%; opacity: 0.8;">
+              </div>
+            </div>
+            <?php endfor; ?>
+          </div>
 
-        <h2>Why Sponsor IBPC Canada?</h2>
-        <ul class="styled-list">
-          <li>Direct access to 500+ Indian and Canadian business professionals</li>
-          <li>Brand visibility at flagship events, conferences, and galas</li>
-          <li>Logo placement on website, newsletters, and promotional materials</li>
-          <li>Speaking opportunities at industry panels and summits</li>
-          <li>Exclusive networking sessions with government and trade leaders</li>
-        </ul>
+          <h4 style="text-transform: uppercase; letter-spacing: 2px; color: var(--color-primary); font-size: 14px; margin-bottom: 25px;">Gold Sponsors</h4>
+          <div class="row justify-content-center mb-5">
+            <?php for ($i = 1; $i <= 4; $i++): ?>
+            <div class="col-md-2 col-4 mb-3">
+              <div style="padding: 10px; border: 1px solid #eee; border-radius: 4px; background: #fff; height: 100%; display: flex; align-items: center; justify-content: center;">
+                <img src="https://placehold.co/150x80/ffffff/777777?text=Sponsor+Logo" alt="Sponsor Logo" style="max-width: 100%; opacity: 0.8;">
+              </div>
+            </div>
+            <?php endfor; ?>
+          </div>
 
-        <h2>Sponsorship Tiers</h2>
-        <div class="row" style="margin-top: 20px;">
-          <div class="col-md-4">
-            <div class="person-card" style="border-color: #d4af37; border-width: 2px;">
-              <div style="font-size: 36px; margin-bottom: 10px;">🥇</div>
-              <h5 class="person-name">Platinum Sponsor</h5>
-              <p class="person-role">$25,000 / Year</p>
-              <p class="person-bio">Premium logo placement, keynote speaking slots, VIP event access, and dedicated newsletter feature.</p>
+          <h4 style="text-transform: uppercase; letter-spacing: 2px; color: var(--color-primary); font-size: 14px; margin-bottom: 25px;">Silver Sponsors</h4>
+          <div class="row justify-content-center">
+            <?php for ($i = 1; $i <= 6; $i++): ?>
+            <div class="col-md-2 col-4 mb-3">
+              <div style="padding: 8px; border: 1px solid #eee; border-radius: 4px; background: #fff; height: 100%; display: flex; align-items: center; justify-content: center;">
+                <img src="https://placehold.co/120x60/ffffff/999999?text=Sponsor+Logo" alt="Sponsor Logo" style="max-width: 100%; opacity: 0.8;">
+              </div>
             </div>
+            <?php endfor; ?>
           </div>
-          <div class="col-md-4">
-            <div class="person-card" style="border-color: #c0c0c0; border-width: 2px;">
-              <div style="font-size: 36px; margin-bottom: 10px;">🥈</div>
-              <h5 class="person-name">Gold Sponsor</h5>
-              <p class="person-role">$15,000 / Year</p>
-              <p class="person-bio">Logo on event materials, panel participation, priority seating, and social media mentions.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="person-card" style="border-color: #cd7f32; border-width: 2px;">
-              <div style="font-size: 36px; margin-bottom: 10px;">🥉</div>
-              <h5 class="person-name">Silver Sponsor</h5>
-              <p class="person-role">$7,500 / Year</p>
-              <p class="person-bio">Logo on website, event brochures, complimentary member passes, and newsletter listing.</p>
-            </div>
-          </div>
+
         </div>
 
-        <div style="margin-top: 40px; text-align: center;">
-          <p>Interested in becoming a sponsor? Contact us to discuss a customized partnership.</p>
-          <a href="/contact" class="btn-1">Contact Us</a>
-        </div>
       </div>
     </div>
   </div>

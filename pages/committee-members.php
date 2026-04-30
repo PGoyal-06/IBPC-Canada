@@ -15,49 +15,35 @@ include __DIR__ . '/../includes/page-header.php';
 $pageTagline = 'Committee members support specialized initiatives, member engagement, events, and organizational development.';
 include __DIR__ . '/../includes/page-tagline.php';
 
-$committees = [
-  'Events Committee' => [
-    ['name' => 'Anisha Kaur',     'initials' => 'AK'],
-    ['name' => 'Shreya Pillai',   'initials' => 'SP'],
-    ['name' => 'Varun Choudhary', 'initials' => 'VC'],
-  ],
-  'Membership Committee' => [
-    ['name' => 'Sanjay Verma',    'initials' => 'SV'],
-    ['name' => 'Divya Tiwari',    'initials' => 'DT'],
-  ],
-  'Trade & Policy Committee' => [
-    ['name' => 'Nikhil Bhatia',   'initials' => 'NB'],
-    ['name' => 'Rohit Menon',     'initials' => 'RM'],
-  ],
-  'Communications Committee' => [
-    ['name' => 'Kavita Saxena',   'initials' => 'KS'],
-  ],
+$committee_boards = [
+  'Emeritus Mentoring Committee',
+  'Steering Committee',
+  'Membership Review Committee',
+  'Audit Committee',
+  'Events Committee',
+  'Communications Committee'
 ];
 ?>
 
 <section class="page-content">
   <div class="container">
     <h2 class="section-label">Teams</h2>
-    <h3 class="section-title">Committee Members</h3>
+    <h3 class="section-title">Committee Boards</h3>
     <p>Our dedicated committee members volunteer their time and expertise across various working groups, ensuring IBPC Canada's programs and initiatives are executed with excellence.</p>
 
-    <?php foreach ($committees as $committeeName => $members): ?>
-    <div class="mb-5">
-      <h4 style="color: var(--color-primary); border-bottom: 2px solid var(--color-primary); padding-bottom: 10px; margin-bottom: 30px;"><?php echo e($committeeName); ?></h4>
-      <div class="row">
-        <?php foreach ($members as $person): ?>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="person-card">
-            <div class="person-photo">
-              <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($person['initials']); ?>&size=150&background=252758&color=fff&font-size=0.4" alt="<?php echo e($person['name']); ?>">
-            </div>
-            <h5 class="person-name"><?php echo e($person['name']); ?></h5>
+    <div class="row mt-5">
+      <?php foreach ($committee_boards as $boardName): ?>
+      <div class="col-md-6 mb-4">
+        <div class="card" style="border: 1px solid var(--color-card-border); border-radius: var(--border-radius-card); overflow: hidden;">
+          <img src="https://placehold.co/600x300/1F3D8C/FFFFFF?text=<?php echo urlencode($boardName); ?>" alt="<?php echo e($boardName); ?>" style="width: 100%; height: auto; display: block;">
+          <div style="padding: 20px; text-align: center;">
+            <h4 style="margin: 0; font-size: 18px; font-weight: 700; color: var(--color-primary);"><?php echo e($boardName); ?></h4>
+            <p style="margin-top: 10px; font-size: 14px; color: #666;">View committee board details and members.</p>
           </div>
         </div>
-        <?php endforeach; ?>
       </div>
+      <?php endforeach; ?>
     </div>
-    <?php endforeach; ?>
 
   </div>
 </section>

@@ -30,7 +30,7 @@ $board = [
 <section class="page-content">
   <div class="container">
     <h2 class="section-label">Governance</h2>
-    <h3 class="section-title">Governing Board</h3>
+    <h3 class="section-title">IBPC CANADA GOVERNING BOARD</h3>
     <p>The Governing Board provides strategic direction and oversight to IBPC Canada's operations, events, and member services. Our board comprises accomplished leaders from diverse industries who are committed to advancing India-Canada business ties.</p>
 
     <div class="row">

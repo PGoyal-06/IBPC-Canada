@@ -61,68 +61,12 @@ $pastEvents = [
 ];
 ?>
 
-<section class="page-content sec-events">
+<section class="coming-soon-section">
   <div class="container">
-    <div class="row align-items-end mb-4">
-      <div class="col-md-8">
-        <h2 class="section-label">Archive</h2>
-        <h3 class="section-title">Past Events</h3>
-        <p>Browse our archive of past events. Read recaps, view photo galleries, and catch up on the insights shared by our speakers.</p>
-      </div>
-      <div class="col-md-4 text-md-end">
-        <div class="d-flex gap-2 justify-content-md-end flex-wrap mb-3">
-          <input type="text" id="past-search" class="form-control" style="max-width: 180px;" placeholder="Search events…">
-          <select id="past-year" class="form-select" style="max-width: 130px;">
-            <option value="">All Years</option>
-            <option value="2026">2026</option>
-            <option value="2025">2025</option>
-            <option value="2024">2024</option>
-          </select>
-          <button id="past-search-btn" class="btn-1" style="padding: 9px 18px; font-size: 14px; white-space: nowrap;">Search</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <?php foreach ($pastEvents as $event): ?>
-      <div class="col-lg-4 col-md-6 mb-4 past-event-item" data-year="<?php echo date('Y', strtotime($event['date'])); ?>">
-        <div class="event-card">
-          <div class="img-contr" style="opacity: 0.85;">
-            <a href="/event-detail?slug=<?php echo $event['slug']; ?>">
-              <img src="<?php echo $event['image']; ?>" alt="<?php echo e($event['title']); ?>">
-            </a>
-          </div>
-          <div class="card-body">
-            <div class="section-name">
-              <span class="badge-type" style="background-color: #666;">
-                Completed
-              </span>
-            </div>
-            <div class="desc-text">
-              <h4><a href="/event-detail?slug=<?php echo $event['slug']; ?>"><?php echo e($event['title']); ?></a></h4>
-            </div>
-            <ul class="category-info list-unstyled">
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <span><?php echo e($event['date']); ?></span>
-              </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span><?php echo e($event['location']); ?></span>
-              </li>
-            </ul>
-            <div style="margin-top: 20px;">
-              <a href="/event-detail?slug=<?php echo $event['slug']; ?>" class="btn-1" style="padding: 10px 20px; font-size: 14px; background: transparent; color: var(--color-primary); border: 1px solid var(--color-primary);">View Recap</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <?php endforeach; ?>
+    <div class="coming-soon-card">
+      <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <h2>Coming Soon</h2>
+      <p>The archive of past IBPC Canada events will be added soon.</p>
     </div>
   </div>
 </section>
