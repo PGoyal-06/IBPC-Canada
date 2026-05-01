@@ -100,24 +100,127 @@
   if ($('#membershipForm').length) {
     var $mForm = $('#membershipForm');
 
-    // Conditional visibility: Affiliate Criteria
+    // Conditional visibility: Affiliate Criteria & Nominees
     $mForm.find('#membership_type').on('change', function() {
       var val = $(this).val();
       $('#affiliate_criteria_group').toggle(val === 'Affiliate');
       
-      // If Diamond, force Lifetime duration
-      if (val === 'Diamond') {
-        $mForm.find('input[name="membership_duration"][value="Lifetime"]').prop('checked', true);
-        $mForm.find('input[name="membership_duration"]').not('[value="Lifetime"]').prop('disabled', true);
+      // Secondary Member Message
+      var $msg = $('#secondary_member_message');
+      if (val === 'Platinum') {
+        $msg.text('This member type can nominate 4 secondary members.').show();
+      } else if (val === 'Gold') {
+        $msg.text('This member type can nominate 1 secondary member.').show();
       } else {
-        $mForm.find('input[name="membership_duration"]').prop('disabled', false);
+        $msg.hide();
       }
+
+      // Duration: Silver, Gold, Platinum; Classification: Silver, Gold only
+      var showDuration = (['Silver', 'Gold', 'Platinum'].indexOf(val) > -1);
+      $('#duration_section_row').toggle(showDuration);
+      $('#classification_section_row').toggle(['Silver', 'Gold'].indexOf(val) > -1);
+      $('#startup_group').toggle(val === 'Affiliate');
+
+      if (showDuration && !$mForm.find('input[name="membership_duration"]:checked').length) {
+        $mForm.find('input[name="membership_duration"][value="One Year"]').prop('checked', true).trigger('change');
+      }
+
+      // Nominee Logic (Gold: 1, Platinum: 4, Diamond: 1)
+      var nomineeCount = 0;
+      if (val === 'Gold') nomineeCount = 1;
+      if (val === 'Platinum') nomineeCount = 4;
+      if (val === 'Diamond') nomineeCount = 1;
+
+      $('#nominee_section').toggle(nomineeCount > 0);
+      $('#nominee_form_group').toggle(nomineeCount > 0);
+
+      for (var i = 1; i <= 4; i++) {
+        var $block = $('#nominee_block_' + i);
+        var $fields = $('.nominee-field-' + i);
+        if (i <= nomineeCount) {
+          $block.show();
+          $fields.prop('required', true);
+        } else {
+          $block.hide();
+          $fields.prop('required', false).val('');
+        }
+      }
+
+      updateSavings();
     });
+
+    // Savings Calculation
+    function updateSavings() {
+      var type = $('#membership_type').val();
+      var duration = $mForm.find('input[name="membership_duration"]:checked').val();
+      var $display = $('#savings_display');
+      
+      if (duration === 'Three Years') {
+        var savings = 0;
+        if (type === 'Silver') savings = 335; // (3 * 555) - 1330
+        if (type === 'Gold') savings = 1110;  // (3 * 1850) - 4440
+        if (type === 'Platinum') savings = 3330; // (3 * 5550) - 13320
+        
+        if (savings > 0) {
+          $('#savings_amount').text(savings.toLocaleString());
+          $display.fadeIn();
+        } else {
+          $display.fadeOut();
+        }
+      } else {
+        $display.fadeOut();
+      }
+    }
+
+    $mForm.find('input[name="membership_duration"]').on('change', updateSavings);
 
     // Conditional visibility: Date of Birth
     $mForm.find('#affiliate_criteria').on('change', function() {
       var val = $(this).val();
       $('#dob_group').toggle(val === 'Member under 45 years');
+      checkAffiliateEligibility();
+    });
+
+    // Affiliate eligibility validation
+    function checkAffiliateEligibility() {
+      var memType = $('#membership_type').val();
+      if (memType !== 'Affiliate') return;
+
+      var criteria = $('#affiliate_criteria').val();
+      var dob = $('#dob').val();
+      var gender = $('#gender').val();
+
+      // Gender check for Woman Entrepreneur
+      if (criteria === 'Woman entrepreneur / professional' && gender === 'Male') {
+        alert("The 'Woman entrepreneur / professional' criteria is reserved for women. Please select another criteria or update your gender selection.");
+        $('#affiliate_criteria').val('');
+        return;
+      }
+
+      // Age check
+      if (criteria === 'Member under 45 years' && dob) {
+        var birthDate = new Date(dob);
+        var today = new Date();
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+          age--;
+        }
+        if (age >= 45) {
+          alert("The 'Member under 45 years' criteria requires the applicant to be under 45. Please verify the Date of Birth or select another criteria.");
+          $('#dob').val('');
+        }
+      }
+    }
+
+    $mForm.find('#dob, #gender').on('change', checkAffiliateEligibility);
+
+    // Startup Toggle
+    $mForm.find('input[name="is_startup"]').on('change', function() {
+      var val = $(this).val();
+      $('#startup_details_section').toggle(val === 'Yes');
+      // Update requirements
+      $('#startup_name, #startup_details').prop('required', val === 'Yes');
     });
 
     // Conditional visibility: Corporate Details
@@ -126,6 +229,23 @@
       var isCorporate = (val === 'Corporate');
       $('.corporate-required').toggle(isCorporate);
       $('.corporate-docs').toggle(isCorporate);
+      $('.corporate-fields').toggle(isCorporate);
+      
+      // Toggle required attribute for business registration number
+      $('#business_reg_number').prop('required', isCorporate);
+    });
+
+    // Initial check for classification (if defaulted to Individual)
+    if ($mForm.find('input[name="member_classification"]:checked').val() === 'Corporate') {
+      $('.corporate-fields, .corporate-docs, .corporate-required').show();
+      $('#business_reg_number').prop('required', true);
+    }
+
+    // Upload zone: show selected filename
+    $mForm.on('change', '.upload-zone-input', function() {
+      var $strong = $(this).closest('.upload-zone').find('strong');
+      if (!$strong.data('original')) $strong.data('original', $strong.text());
+      $strong.text(this.files[0] ? this.files[0].name : $strong.data('original'));
     });
 
     // Validation
@@ -168,8 +288,12 @@
         if (res.success) {
           alert(res.message || 'Application submitted successfully!');
           form.reset();
-          // Hide conditional groups
-          $('#affiliate_criteria_group, #dob_group, .corporate-docs, .corporate-required').hide();
+          // Hide conditional groups and reset upload zone labels
+          $('#affiliate_criteria_group, #dob_group, .corporate-docs, .corporate-required, #classification_section_row, #startup_group, #duration_section_row, #nominee_section, #startup_details_section, #savings_display, #secondary_member_message').hide();
+          $mForm.find('.upload-zone strong').each(function() {
+            var orig = $(this).data('original');
+            if (orig) $(this).text(orig);
+          });
         } else {
           alert(res.message || 'Submission failed. Please try again.');
         }

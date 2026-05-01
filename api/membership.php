@@ -9,6 +9,14 @@ header('X-Content-Type-Options: nosniff');
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../includes/functions.php';
 
+/**
+ * Sanitize filename and check for restricted characters.
+ * Restricted: # $ % &
+ */
+function isFilenameValid($filename) {
+    return !preg_match('/[#$%\&]/', $filename);
+}
+
 // Only accept POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -21,7 +29,7 @@ $requiredFields = [
     'membership_type', 'membership_duration', 'member_classification', 'is_startup',
     'salutation', 'first_name', 'last_name', 'designation',
     'street_address', 'city', 'province', 'postal_code', 'country', 'comm_email', 'primary_phone',
-    'business_category', 'focus_group', 'privacy_consent', 'accuracy_declaration', 'comm_consent'
+    'business_category', 'focus_group', 'government_id_number', 'privacy_consent', 'accuracy_declaration', 'comm_consent'
 ];
 
 $errors = [];
@@ -47,6 +55,17 @@ if (defined('RECAPTCHA_SECRET_KEY') && RECAPTCHA_SECRET_KEY !== 'YOUR_RECAPTCHA_
     }
 }
 
+// Filename Sanitization Check
+foreach ($_FILES as $fileKey => $fileData) {
+    if ($fileData['error'] === UPLOAD_ERR_OK) {
+        if (!isFilenameValid($fileData['name'])) {
+            http_response_code(422);
+            echo json_encode(['success' => false, 'message' => "File '{$fileData['name']}' contains restricted characters (#, $, %, &). Please rename the file and try again."]);
+            exit;
+        }
+    }
+}
+
 // MVP: File Upload Logic (Placeholders)
 // In a full implementation, we would move_uploaded_file() here.
 // We check if files were sent but don't save them to disk yet to avoid server config issues.
@@ -54,6 +73,19 @@ $requiredFiles = ['member_photo', 'gov_id'];
 if ($_POST['member_classification'] === 'Corporate') {
     $requiredFiles[] = 'business_reg_doc';
     $requiredFiles[] = 'company_logo';
+}
+
+// Check for Nominee Files
+$nomineeCount = 0;
+if ($_POST['membership_type'] === 'Gold') $nomineeCount = 1;
+if ($_POST['membership_type'] === 'Platinum') $nomineeCount = 4;
+
+if ($nomineeCount > 0) {
+    $requiredFiles[] = 'nominee_form';
+    for ($i = 1; $i <= $nomineeCount; $i++) {
+        $requiredFiles[] = "nominee_{$i}_id";
+        $requiredFiles[] = "nominee_{$i}_photo";
+    }
 }
 
 foreach ($requiredFiles as $fileKey) {
@@ -70,8 +102,18 @@ $body    = "A new membership application has been submitted via the website.\n\n
          . "Applicant: " . $_POST['salutation'] . " " . $_POST['first_name'] . " " . $_POST['last_name'] . "\n"
          . "Designation: " . $_POST['designation'] . "\n"
          . "Email: " . $_POST['comm_email'] . "\n"
-         . "Phone: " . $_POST['primary_phone'] . "\n\n"
-         . "Full details and documents are available for review in the system.";
+         . "Phone: " . $_POST['primary_phone'] . "\n";
+
+if ($nomineeCount > 0) {
+    $body .= "\nAdditional Nominees ({$nomineeCount}):\n";
+    for ($i = 1; $i <= $nomineeCount; $i++) {
+        $name = $_POST["nominee_{$i}_name"] ?? 'N/A';
+        $desig = $_POST["nominee_{$i}_designation"] ?? 'N/A';
+        $body .= "- Nominee #{$i}: $name ($desig)\n";
+    }
+}
+
+$body .= "\nFull details and documents are available for review in the system.";
 
 $headers  = "From: " . SMTP_FROM_NAME . " <" . SMTP_FROM . ">\r\n";
 $headers .= "Reply-To: " . $_POST['comm_email'] . "\r\n";
