@@ -1,7 +1,11 @@
 <?php
 /**
  * IBPC Canada — Be a Member (Landing)
+ * Redirecting to Membership Categories as per modernization request.
  */
+header("Location: /membership-categories", true, 301);
+exit();
+
 $pageTitle = 'Be a Member — IBPC Canada';
 $pageDescription = 'Join IBPC Canada and become part of a premier network connecting Indian business professionals across Canada. Explore Diamond, Corporate, and General membership options.';
 $isHomepage = false;

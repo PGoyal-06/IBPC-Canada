@@ -44,7 +44,7 @@
           <div class="footer-links">
             <a href="/about-us">About Us</a>
             <a href="/upcoming-events">Events</a>
-            <a href="/be-a-member">Be a Member</a>
+            <a href="/membership-categories">Be a Member</a>
             <a href="/renew-membership">Renew Membership</a>
             <a href="/news">News &amp; Media</a>
           </div>

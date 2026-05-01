@@ -15,11 +15,6 @@ include __DIR__ . '/../includes/page-header.php';
 $pageTagline = 'IBPC Canada honours the former patrons whose generous support and guidance helped establish and grow the organization.';
 include __DIR__ . '/../includes/page-tagline.php';
 
-$formerPatrons = [
-  ['name' => 'Mr. Rajan Krishnamurthy', 'role' => 'Founding Patron (2018–2022)', 'company' => 'Krishna Holdings Inc.',    'initials' => 'RK'],
-  ['name' => 'Hon. David Mitchell',      'role' => 'Patron (2019–2023)',          'company' => 'Trade Commission Canada',   'initials' => 'DM'],
-  ['name' => 'Dr. Anita Desai',          'role' => 'Patron (2020–2024)',          'company' => 'Desai Pharmaceuticals',     'initials' => 'AD'],
-];
 ?>
 
 <section class="page-content">
@@ -28,19 +23,10 @@ $formerPatrons = [
     <h3 class="section-title">Former Patrons</h3>
     <p>We gratefully acknowledge the former patrons whose leadership and vision helped establish IBPC Canada as a premier bilateral business organization.</p>
 
-    <div class="row">
-      <?php foreach ($formerPatrons as $person): ?>
-      <div class="col-lg-4 col-md-6">
-        <div class="person-card">
-          <div class="person-photo">
-            <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($person['initials']); ?>&size=150&background=252758&color=fff&font-size=0.4" alt="<?php echo e($person['name']); ?>">
-          </div>
-          <h5 class="person-name"><?php echo e($person['name']); ?></h5>
-          <p class="person-role"><?php echo e($person['role']); ?></p>
-          <p class="person-company"><?php echo e($person['company']); ?></p>
-        </div>
-      </div>
-      <?php endforeach; ?>
+    <div class="coming-soon-card">
+      <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <h2>Coming Soon</h2>
+      <p>The list of Former Patrons will be updated soon.</p>
     </div>
   </div>
 </section>

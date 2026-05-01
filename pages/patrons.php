@@ -16,12 +16,6 @@ $pageTagline = 'IBPC Canada is guided by respected community and business leader
 include __DIR__ . '/../includes/page-tagline.php';
 
 // Placeholder patron data — in production this comes from the DB
-$patrons = [
-  ['name' => 'Dr. Vikram Rao',      'role' => 'Chief Patron',   'company' => 'Rao Global Industries',       'initials' => 'VR'],
-  ['name' => 'Hon. Margaret Chen',   'role' => 'Patron',         'company' => 'Government of Ontario',        'initials' => 'MC'],
-  ['name' => 'Mr. Suresh Patel',     'role' => 'Patron',         'company' => 'Patel Capital Partners',       'initials' => 'SP'],
-  ['name' => 'Ms. Catherine Dubois', 'role' => 'Patron',         'company' => 'Canada-India Chamber Alliance','initials' => 'CD'],
-];
 ?>
 
 <section class="page-content">
@@ -30,19 +24,10 @@ $patrons = [
     <h3 class="section-title">IBPC CANADA PATRONS</h3>
     <p>IBPC Canada is proud to be guided by distinguished leaders from government, industry, and the diplomatic community who share our vision of strengthening India-Canada economic relations.</p>
 
-    <div class="row">
-      <?php foreach ($patrons as $patron): ?>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="person-card featured">
-          <div class="person-photo">
-            <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($patron['initials']); ?>&size=150&background=1F3D8C&color=fff&font-size=0.4" alt="<?php echo e($patron['name']); ?>">
-          </div>
-          <h5 class="person-name"><?php echo e($patron['name']); ?></h5>
-          <p class="person-role"><?php echo e($patron['role']); ?></p>
-          <p class="person-company"><?php echo e($patron['company']); ?></p>
-        </div>
-      </div>
-      <?php endforeach; ?>
+    <div class="coming-soon-card">
+      <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <h2>Coming Soon</h2>
+      <p>The list of IBPC Canada Patrons will be updated soon.</p>
     </div>
   </div>
 </section>

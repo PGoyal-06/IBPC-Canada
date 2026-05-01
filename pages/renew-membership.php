@@ -9,7 +9,7 @@ include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Renew Membership';
 $pageHeaderIcon  = 'users';
-$breadcrumbs = [['label' => 'Be a Member', 'url' => '/be-a-member'], ['label' => 'Renew Membership']];
+$breadcrumbs = [['label' => 'Be a Member', 'url' => '/membership-categories'], ['label' => 'Renew Membership']];
 include __DIR__ . '/../includes/page-header.php';
 ?>
 

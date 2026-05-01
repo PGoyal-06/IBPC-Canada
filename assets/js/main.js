@@ -96,6 +96,95 @@
     });
   }
 
+  // ── Membership Form Logic ──
+  if ($('#membershipForm').length) {
+    var $mForm = $('#membershipForm');
+
+    // Conditional visibility: Affiliate Criteria
+    $mForm.find('#membership_type').on('change', function() {
+      var val = $(this).val();
+      $('#affiliate_criteria_group').toggle(val === 'Affiliate');
+      
+      // If Diamond, force Lifetime duration
+      if (val === 'Diamond') {
+        $mForm.find('input[name="membership_duration"][value="Lifetime"]').prop('checked', true);
+        $mForm.find('input[name="membership_duration"]').not('[value="Lifetime"]').prop('disabled', true);
+      } else {
+        $mForm.find('input[name="membership_duration"]').prop('disabled', false);
+      }
+    });
+
+    // Conditional visibility: Date of Birth
+    $mForm.find('#affiliate_criteria').on('change', function() {
+      var val = $(this).val();
+      $('#dob_group').toggle(val === 'Member under 45 years');
+    });
+
+    // Conditional visibility: Corporate Details
+    $mForm.find('input[name="member_classification"]').on('change', function() {
+      var val = $(this).val();
+      var isCorporate = (val === 'Corporate');
+      $('.corporate-required').toggle(isCorporate);
+      $('.corporate-docs').toggle(isCorporate);
+    });
+
+    // Validation
+    if ($.fn.validate) {
+      $mForm.validate({
+        errorClass: 'is-invalid',
+        validClass: 'is-valid',
+        submitHandler: function (form) {
+          var $btn = $(form).find('button[type="submit"]');
+          var original = $btn.text();
+          $btn.prop('disabled', true).text('Processing...');
+
+          if (typeof grecaptcha !== 'undefined') {
+            grecaptcha.ready(function() {
+              grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'membership'}).then(function(token) {
+                $('#recaptcha_token').val(token);
+                submitMembershipForm(form, $btn, original);
+              });
+            });
+          } else {
+            submitMembershipForm(form, $btn, original);
+          }
+        }
+      });
+    }
+  }
+
+  // ── Membership Form AJAX Helper ──
+  function submitMembershipForm(form, $btn, originalText) {
+    var formData = new FormData(form);
+
+    $.ajax({
+      url: $(form).attr('action'),
+      method: 'POST',
+      data: formData,
+      processData: false,
+      contentType: false,
+      dataType: 'json',
+      success: function (res) {
+        if (res.success) {
+          alert(res.message || 'Application submitted successfully!');
+          form.reset();
+          // Hide conditional groups
+          $('#affiliate_criteria_group, #dob_group, .corporate-docs, .corporate-required').hide();
+        } else {
+          alert(res.message || 'Submission failed. Please try again.');
+        }
+      },
+      error: function (xhr) {
+        var msg = 'Network error. Please try again.';
+        if (xhr.responseJSON && xhr.responseJSON.message) msg = xhr.responseJSON.message;
+        alert(msg);
+      },
+      complete: function () {
+        $btn.prop('disabled', false).text(originalText);
+      }
+    });
+  }
+
   // ── EmailJS send helper ──
   function sendViaEmailJS(form, $btn, originalText) {
     if (typeof emailjs === 'undefined') {

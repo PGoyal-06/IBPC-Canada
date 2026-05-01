@@ -104,7 +104,7 @@ $navbarClass = $isHomepage ? 'nav-bar transparent' : 'nav-bar active';
 
       <!-- Be a Member -->
       <li>
-        <a href="/be-a-member">Be a Member</a>
+        <a href="/membership-categories">Be a Member</a>
         <div class="nav-dropdown">
           <a href="/diamond-members">Diamond Members</a>
           <a href="/corporate-members">Corporate Members</a>

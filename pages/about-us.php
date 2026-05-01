@@ -268,7 +268,7 @@ include __DIR__ . '/../includes/page-header.php';
   <div class="container">
     <p>IBPC Canada membership opens doors to an exclusive network of Indian business leaders, trade facilitation services, and high-impact events. We offer membership tiers designed for individuals, growing businesses, and established enterprises — all united by a shared commitment to India-Canada prosperity.</p>
     <div class="member-quicklinks">
-      <a href="/be-a-member#tiers">Tiers</a>
+      <a href="/membership-categories">Tiers</a>
       <a href="/membership-categories#fees">Fees</a>
       <a href="/membership-categories#benefits">Benefits</a>
     </div>

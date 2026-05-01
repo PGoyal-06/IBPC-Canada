@@ -9,17 +9,9 @@ include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Diamond Members';
 $pageHeaderIcon  = 'users';
-$breadcrumbs = [['label' => 'Be a Member', 'url' => '/be-a-member'], ['label' => 'Diamond Members']];
+$breadcrumbs = [['label' => 'Be a Member', 'url' => '/membership-categories'], ['label' => 'Diamond Members']];
 include __DIR__ . '/../includes/page-header.php';
 
-$members = [
-    ['name' => 'Mehta Global Consulting',    'rep' => 'Rajiv Mehta',     'sector' => 'Business Consulting',   'initials' => 'MG'],
-    ['name' => 'Sharma Wealth Management',   'rep' => 'Priya Sharma',    'sector' => 'Financial Services',    'initials' => 'SW'],
-    ['name' => 'Kapoor Law Professional',    'rep' => 'Anil Kapoor',     'sector' => 'Legal Services',        'initials' => 'KL'],
-    ['name' => 'Patel Technology Inc.',      'rep' => 'Kiran Patel',     'sector' => 'Information Technology','initials' => 'PT'],
-    ['name' => 'Desai Clean Energy',         'rep' => 'Mehul Desai',     'sector' => 'Clean Energy',          'initials' => 'DC'],
-    ['name' => 'Iyer Healthcare Group',      'rep' => 'Nisha Iyer',      'sector' => 'Healthcare',            'initials' => 'IH'],
-];
 ?>
 
 <section class="page-content">
@@ -28,20 +20,10 @@ $members = [
     <h3 class="section-title">Diamond Members</h3>
     <p>Diamond Members represent IBPC Canada's most prestigious membership tier. These organizations are industry leaders who champion India-Canada bilateral trade at the highest level and receive maximum visibility across all IBPC Canada platforms and events.</p>
 
-    <div class="row" style="margin-top: 30px;">
-      <?php foreach ($members as $m): ?>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="person-card featured" style="border-color: #F39200;">
-          <div class="person-photo" style="border-color: #F39200;">
-            <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($m['initials']); ?>&size=150&background=F39200&color=fff&font-size=0.35" alt="<?php echo e($m['name']); ?>">
-          </div>
-          <h5 class="person-name"><?php echo e($m['name']); ?></h5>
-          <p class="person-role"><?php echo e($m['rep']); ?></p>
-          <p class="person-company"><?php echo e($m['sector']); ?></p>
-          <p style="margin-top: 10px;"><span style="background: #fff3e0; color: #F39200; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px; text-transform: uppercase;">💎 Diamond</span></p>
-        </div>
-      </div>
-      <?php endforeach; ?>
+    <div class="coming-soon-card">
+      <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <h2>Coming Soon</h2>
+      <p>The list of Diamond Members will be updated soon.</p>
     </div>
 
     <div style="text-align: center; margin-top: 30px;">

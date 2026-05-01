@@ -15,14 +15,6 @@ include __DIR__ . '/../includes/page-header.php';
 $pageTagline = 'Committee members support specialized initiatives, member engagement, events, and organizational development.';
 include __DIR__ . '/../includes/page-tagline.php';
 
-$committee_boards = [
-  'Emeritus Mentoring Committee',
-  'Steering Committee',
-  'Membership Review Committee',
-  'Audit Committee',
-  'Events Committee',
-  'Communications Committee'
-];
 ?>
 
 <section class="page-content">
@@ -31,18 +23,10 @@ $committee_boards = [
     <h3 class="section-title">Committee Boards</h3>
     <p>Our dedicated committee members volunteer their time and expertise across various working groups, ensuring IBPC Canada's programs and initiatives are executed with excellence.</p>
 
-    <div class="row mt-5">
-      <?php foreach ($committee_boards as $boardName): ?>
-      <div class="col-md-6 mb-4">
-        <div class="card" style="border: 1px solid var(--color-card-border); border-radius: var(--border-radius-card); overflow: hidden;">
-          <img src="https://placehold.co/600x300/1F3D8C/FFFFFF?text=<?php echo urlencode($boardName); ?>" alt="<?php echo e($boardName); ?>" style="width: 100%; height: auto; display: block;">
-          <div style="padding: 20px; text-align: center;">
-            <h4 style="margin: 0; font-size: 18px; font-weight: 700; color: var(--color-primary);"><?php echo e($boardName); ?></h4>
-            <p style="margin-top: 10px; font-size: 14px; color: #666;">View committee board details and members.</p>
-          </div>
-        </div>
-      </div>
-      <?php endforeach; ?>
+    <div class="coming-soon-card">
+      <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <h2>Coming Soon</h2>
+      <p>The list of Committee Boards will be updated soon.</p>
     </div>
 
   </div>

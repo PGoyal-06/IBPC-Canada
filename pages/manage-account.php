@@ -10,7 +10,7 @@ include __DIR__ . '/../includes/header.php';
 
 $pageHeaderTitle = 'Manage Account';
 $pageHeaderIcon  = 'users';
-$breadcrumbs = [['label' => 'Be a Member', 'url' => '/be-a-member'], ['label' => 'Manage Account']];
+$breadcrumbs = [['label' => 'Be a Member', 'url' => '/membership-categories'], ['label' => 'Manage Account']];
 include __DIR__ . '/../includes/page-header.php';
 
 $loggedIn = isLoggedIn();
