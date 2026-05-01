@@ -146,122 +146,14 @@ include __DIR__ . '/includes/header.php';
     <h2 class="section-label">Events</h2>
     <h3 class="section-title">Past Events</h3>
 
-    <div class="row">
-
-      <!-- Event Card 1 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="event-card">
-          <div class="img-contr">
-            <a href="#"><img src="<?php echo IMG_URL; ?>/home/event1.png" alt="Business Innovation Forum"></a>
-          </div>
-          <div class="card-body">
-            <div class="lead-section">
-              <h4 class="section-name">
-                <span class="badge-type">PHYSICAL</span>
-                Feb 20, 2026 — 6:00 PM EST
-              </h4>
-              <p class="desc-text"><a href="#">India-Canada Business Innovation Forum 2026</a></p>
-            </div>
-            <ul class="category-info">
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                February 20, 2026
-              </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                Metro Toronto Convention Centre
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Event Card 2 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="event-card">
-          <div class="img-contr">
-            <a href="#"><img src="<?php echo IMG_URL; ?>/home/event2.png" alt="Virtual Business Webinar"></a>
-          </div>
-          <div class="card-body">
-            <div class="lead-section">
-              <h4 class="section-name">
-                <span class="badge-type">VIRTUAL</span>
-                Jan 15, 2026 — 2:00 PM EST
-              </h4>
-              <p class="desc-text"><a href="#">Webinar: Expanding Your Business to India</a></p>
-            </div>
-            <ul class="category-info">
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                January 15, 2026
-              </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                Online (Zoom)
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Event Card 3 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="event-card">
-          <div class="img-contr">
-            <a href="#"><img src="/bannerimg/banner3.png" alt="Annual Gala Dinner"></a>
-          </div>
-          <div class="card-body">
-            <div class="lead-section">
-              <h4 class="section-name">
-                <span class="badge-type">PHYSICAL</span>
-                Nov 10, 2025 — 7:00 PM EST
-              </h4>
-              <p class="desc-text"><a href="#">IBPC Canada Annual Gala Dinner 2025</a></p>
-            </div>
-            <ul class="category-info">
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                November 10, 2025
-              </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                Fairmont Royal York, Toronto
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
+    <div class="coming-soon-card">
+      <svg class="cs-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+      <h2>Coming Soon</h2>
+      <p>IBPC Canada events will be added soon.</p>
     </div>
   </div>
 </section>

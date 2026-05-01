@@ -118,39 +118,192 @@ include __DIR__ . '/../includes/page-header.php';
 
       <div class="tier-cards">
 
+        <!-- Silver -->
+        <div class="tier-card tier-card--silver">
+          <div class="tier-card-header">
+            <h4>🥈 Silver</h4>
+            <span>Individual / Corporate</span>
+          </div>
+          <div class="tier-card-body">
+            <h6>Membership Details</h6>
+            <ul>
+              <li>Single Membership</li>
+              <li>Primary Membership, Non-Transferable Voting Rights</li>
+              <li>No enrolment fee or re-registration fee</li>
+            </ul>
+
+            <h6>Pricing</h6>
+            <ul>
+              <li>CAD 555 / annum</li>
+              <li>CAD 1,330 / 3 years</li>
+            </ul>
+
+            <h6>Key Benefits</h6>
+            <ul>
+              <li>1 Primary Membership</li>
+              <li>1 additional guest, by invitation</li>
+              <li>Onboarding on website and IBPC Canada quarterly newsletter</li>
+              <li>Membership to Focus Group of choice</li>
+            </ul>
+
+            <h6>Required Documents</h6>
+            <ul>
+              <li>Government-issued ID</li>
+              <li>Profile / bio</li>
+              <li>Contact email ID</li>
+              <li>Profile photograph</li>
+              <li>Corporate logo, if applicable</li>
+            </ul>
+          </div>
+          <div class="tier-card-footer">
+            <a href="/membership-application" class="btn-1">Apply Now</a>
+          </div>
+        </div>
+
+        <!-- Gold -->
+        <div class="tier-card tier-card--gold">
+          <div class="tier-card-header">
+            <h4>🥇 Gold</h4>
+            <span>Individual / Family / Corporate</span>
+          </div>
+          <div class="tier-card-body">
+            <h6>Membership Details</h6>
+            <ul>
+              <li>Valid for up to 2 members</li>
+              <li>Primary Membership, Non-Transferable Voting Rights</li>
+              <li>No enrolment fee or re-registration fee</li>
+            </ul>
+
+            <h6>Pricing</h6>
+            <ul>
+              <li>CAD 1,850 / annum</li>
+              <li>CAD 4,440 / 3 years</li>
+            </ul>
+
+            <h6>Key Benefits</h6>
+            <ul>
+              <li>2 Primary Memberships</li>
+              <li>2 additional guests, by invitation</li>
+              <li>All benefits of Silver Tier</li>
+              <li>Access to Exclusive Events</li>
+              <li>Access to Advisory Panel of IBPC Executive Committee</li>
+              <li>Nomination to Focus Group steering committee</li>
+              <li>Input on curation of syndicated events</li>
+              <li>Onboarding on IBPC social media channels</li>
+              <li>Company spotlight in IBPC Canada quarterly newsletter</li>
+            </ul>
+
+            <h6>Required Documents</h6>
+            <ul>
+              <li>Government-issued ID</li>
+              <li>Nomination / declaration form, if applicable</li>
+              <li>Business registration or company profile, if applicable</li>
+              <li>Profile / bio</li>
+              <li>Contact email ID</li>
+              <li>Corporate logo, if applicable</li>
+            </ul>
+
+            <h6>For Nominees / Secondary Members</h6>
+            <ul>
+              <li>Government-issued ID</li>
+              <li>Profile / bio</li>
+              <li>Contact email ID</li>
+              <li>Profile photograph</li>
+            </ul>
+          </div>
+          <div class="tier-card-footer">
+            <a href="/membership-application" class="btn-1">Apply Now</a>
+          </div>
+        </div>
+
+        <!-- Platinum -->
+        <div class="tier-card tier-card--platinum">
+          <div class="tier-card-header">
+            <h4>🏅 Platinum</h4>
+            <span>Corporate</span>
+          </div>
+          <div class="tier-card-body">
+            <h6>Membership Details</h6>
+            <ul>
+              <li>Valid for up to 5 members</li>
+              <li>Primary Membership, Non-Transferable Voting Rights</li>
+              <li>No enrolment fee or re-registration fee</li>
+            </ul>
+
+            <h6>Pricing</h6>
+            <ul>
+              <li>CAD 5,550 / annum</li>
+              <li>CAD 13,320 / 3 years</li>
+            </ul>
+
+            <h6>Key Benefits</h6>
+            <ul>
+              <li>5 Primary Memberships</li>
+              <li>5 additional guests, by invitation</li>
+              <li>All benefits of Gold Tier</li>
+              <li>Speaker Opportunities for business events</li>
+              <li>Access to Mentorship from IBPC Canada Governing Board Member</li>
+              <li>Hosting a specifically curated event</li>
+              <li>Policy advocacy opportunity with key institutions</li>
+            </ul>
+
+            <h6>Required Documents</h6>
+            <ul>
+              <li>Government-issued ID</li>
+              <li>Nomination / declaration form, if applicable</li>
+              <li>Business registration or company profile, if applicable</li>
+              <li>Profile / bio</li>
+              <li>Contact email ID</li>
+              <li>Corporate logo, if applicable</li>
+            </ul>
+
+            <h6>For Nominees / Secondary Members</h6>
+            <ul>
+              <li>Government-issued ID</li>
+              <li>Profile / bio</li>
+              <li>Contact email ID</li>
+              <li>Profile photograph</li>
+            </ul>
+          </div>
+          <div class="tier-card-footer">
+            <a href="/membership-application" class="btn-1">Apply Now</a>
+          </div>
+        </div>
+
         <!-- Diamond -->
         <div class="tier-card tier-card--diamond">
           <div class="tier-card-header">
             <h4>💎 Diamond</h4>
-            <span>Premium Enterprise Membership</span>
+            <span>Lifetime — One Person</span>
           </div>
           <div class="tier-card-body">
-            <p>For established enterprises seeking maximum visibility, priority access, and strategic positioning within
-              the India-Canada business corridor.</p>
-
-            <h6>Key Benefits</h6>
+            <h6>Membership Details</h6>
             <ul>
-              <li>Featured listing in Member Directory</li>
-              <li>Access to all annual events</li>
-              <li>Priority trade mission participation</li>
-              <li>Priority speaking opportunities at events</li>
-              <li>Logo on IBPC Canada materials</li>
-              <li>Business matchmaking services</li>
-              <li>Dedicated relationship manager</li>
-              <li>4 Annual Gala &amp; Awards Dinner tickets</li>
-              <li>Full-page advertising in IBPC Canada Magazine</li>
-              <li>Premium exhibition space at trade events</li>
-              <li>Investment introductions</li>
+              <li>Single Lifetime Membership</li>
+              <li>Primary Membership, Non-Transferable Voting Rights</li>
+              <li>No enrolment fee or re-registration fee</li>
             </ul>
 
             <h6>Pricing</h6>
             <ul>
-              <li>To be confirmed</li>
+              <li>CAD 11,100 one-time</li>
+            </ul>
+
+            <h6>Key Benefits</h6>
+            <ul>
+              <li>1 Lifetime Primary Membership</li>
+              <li>2 additional guests, by invitation</li>
+              <li>All benefits of Platinum Tier</li>
             </ul>
 
             <h6>Required Documents</h6>
             <ul>
-              <li>Membership application details to be confirmed</li>
+              <li>Government-issued ID</li>
+              <li>Business registration or company profile, if applicable</li>
+              <li>Profile / bio</li>
+              <li>Contact email ID</li>
+              <li>Corporate logo, if applicable</li>
+              <li>Profile photograph</li>
             </ul>
           </div>
           <div class="tier-card-footer">
@@ -158,72 +311,41 @@ include __DIR__ . '/../includes/page-header.php';
           </div>
         </div>
 
-        <!-- Corporate -->
-        <div class="tier-card tier-card--corporate">
+        <!-- Affiliate -->
+        <div class="tier-card tier-card--affiliate">
           <div class="tier-card-header">
-            <h4>🏢 Corporate</h4>
-            <span>Business Membership</span>
+            <h4>🤝 Affiliate</h4>
+            <span>New Category — Criteria-Based</span>
           </div>
           <div class="tier-card-body">
-            <p>For growing businesses looking to expand their India-Canada trade network, access matchmaking services,
-              and participate in trade missions.</p>
-
-            <h6>Key Benefits</h6>
+            <h6>Membership Details</h6>
             <ul>
-              <li>Standard listing in Member Directory</li>
-              <li>Access to all annual events</li>
-              <li>Standard trade mission participation</li>
-              <li>Standard speaking opportunities at events</li>
-              <li>Business matchmaking services</li>
-              <li>2 Annual Gala &amp; Awards Dinner tickets</li>
-              <li>Half-page advertising in IBPC Canada Magazine</li>
-              <li>Standard exhibition space at trade events</li>
-              <li>Investment introductions</li>
+              <li>Criteria-based member referral</li>
+              <li>Must fulfill at least 1 of 3 criteria</li>
+              <li>No enrolment fee or re-registration fee</li>
             </ul>
 
             <h6>Pricing</h6>
             <ul>
-              <li>To be confirmed</li>
+              <li>CAD 185 / annum</li>
             </ul>
-
-            <h6>Required Documents</h6>
-            <ul>
-              <li>Membership application details to be confirmed</li>
-            </ul>
-          </div>
-          <div class="tier-card-footer">
-            <a href="/membership-application" class="btn-1">Apply Now</a>
-          </div>
-        </div>
-
-        <!-- General -->
-        <div class="tier-card tier-card--general">
-          <div class="tier-card-header">
-            <h4>👤 General</h4>
-            <span>Individual Membership</span>
-          </div>
-          <div class="tier-card-body">
-            <p>For professionals and individuals looking to stay connected with the India-Canada business community and
-              access networking events.</p>
 
             <h6>Key Benefits</h6>
             <ul>
-              <li>Standard listing in Member Directory</li>
-              <li>Access to networking events</li>
-              <li>Access to reports &amp; publications</li>
-              <li>Newsletter subscription</li>
-              <li>Member-only online portal</li>
-              <li>1 Annual Gala &amp; Awards Dinner ticket</li>
-            </ul>
-
-            <h6>Pricing</h6>
-            <ul>
-              <li>To be confirmed</li>
+              <li>Criteria-based Membership</li>
+              <li>Women, Members under 45 years, or Startup Founder/CXO (vetted)</li>
+              <li>Max term: 3 years</li>
+              <li>Membership to Focus Group of choice</li>
             </ul>
 
             <h6>Required Documents</h6>
             <ul>
-              <li>Membership application details to be confirmed</li>
+              <li>Government-issued ID</li>
+              <li>Business registration or company profile, if applicable</li>
+              <li>Profile / bio</li>
+              <li>Contact email ID</li>
+              <li>Corporate logo, if applicable</li>
+              <li>Profile photograph</li>
             </ul>
           </div>
           <div class="tier-card-footer">

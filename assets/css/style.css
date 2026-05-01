@@ -981,11 +981,12 @@ p { margin: 0 0 15px; }
 /* --- Tier Cards --- */
 .tier-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 25px;
   margin-top: 30px;
 }
 .tier-card {
+  grid-column: span 2;
   border: 1px solid var(--color-card-border);
   border-radius: var(--border-radius-card);
   background: var(--color-white);
@@ -998,6 +999,9 @@ p { margin: 0 0 15px; }
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   transform: translateY(-4px);
 }
+/* Center the 4th and 5th cards on the second row */
+.tier-card:nth-child(4) { grid-column: 2 / span 2; }
+.tier-card:nth-child(5) { grid-column: 4 / span 2; }
 .tier-card-header {
   padding: 25px 20px;
   text-align: center;
@@ -1072,17 +1076,24 @@ p { margin: 0 0 15px; }
 }
 
 /* Tier card accent colors */
-.tier-card--diamond .tier-card-header { background: linear-gradient(135deg, #F39200, #e68400); }
-.tier-card--corporate .tier-card-header { background: linear-gradient(135deg, var(--color-primary), #162C66); }
-.tier-card--general .tier-card-header { background: linear-gradient(135deg, #555, #333); }
+.tier-card--silver    .tier-card-header { background: linear-gradient(135deg, #7a8fa6, #4f6880); }
+.tier-card--gold      .tier-card-header { background: linear-gradient(135deg, #d4a017, #a87800); }
+.tier-card--platinum  .tier-card-header { background: linear-gradient(135deg, var(--color-primary), #162C66); }
+.tier-card--diamond   .tier-card-header { background: linear-gradient(135deg, #6b3fa0, #4a2472); }
+.tier-card--affiliate .tier-card-header { background: linear-gradient(135deg, #2e8b6f, #1a5c48); }
 
 /* --- Responsive --- */
 @media (max-width: 991px) {
   .privileges-grid { grid-template-columns: repeat(2, 1fr); }
-  .tier-cards { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .tier-cards { grid-template-columns: repeat(2, 1fr); max-width: 700px; margin-left: auto; margin-right: auto; }
+  .tier-card { grid-column: auto; }
+  .tier-card:nth-child(4) { grid-column: auto; }
+  .tier-card:nth-child(5) { grid-column: 1 / -1; max-width: calc(50% - 12.5px); justify-self: center; }
 }
 @media (max-width: 575px) {
   .privileges-grid { grid-template-columns: 1fr; }
+  .tier-cards { grid-template-columns: 1fr; max-width: 500px; }
+  .tier-card:nth-child(5) { grid-column: auto; max-width: 100%; justify-self: auto; }
 }
 
 /* ============================================================
