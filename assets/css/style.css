@@ -1124,6 +1124,152 @@ p { margin: 0 0 15px; }
 }
 
 /* ============================================================
+   MEMBER PORTAL
+   ============================================================ */
+.portal-wrap { background: var(--color-bg-light); }
+
+.portal-header {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-card-border);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.portal-header__brand { font-size: 15px; font-weight: 700; color: var(--color-primary); text-decoration: none; }
+.portal-header__brand:hover { color: var(--color-primary); opacity: 0.85; }
+
+.portal-header__user { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.portal-header__name { font-size: 13px; font-weight: 600; color: var(--color-body); }
+.portal-header__logout { font-size: 13px; color: #888; }
+.portal-header__logout:hover { color: var(--color-accent-red); }
+
+.portal-status-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.portal-status-badge--active  { background: #e8f5e9; color: #2e7d32; }
+.portal-status-badge--pending { background: #fff8e1; color: #e65100; }
+.portal-status-badge--paid_pending_approval { background: #e3f2fd; color: #1976d2; }
+.portal-status-badge--registered_pending_payment { background: #fbe9e7; color: #d32f2f; }
+.portal-status-badge--expired { background: #fbe9e7; color: #bf360c; }
+.portal-status-badge--unknown { background: #f3f3f3; color: #666; }
+
+.portal-body { display: flex; align-items: flex-start; }
+
+.portal-nav {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--color-white);
+  border-right: 1px solid var(--color-card-border);
+  padding: 20px 0;
+  min-height: 600px;
+  position: sticky;
+  top: var(--navbar-height);
+  align-self: flex-start;
+}
+
+.portal-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-body);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: background 0.15s;
+  text-transform: none;
+}
+.portal-nav__link:hover { background: var(--color-bg-light); color: var(--color-primary); }
+.portal-nav__link--active {
+  background: var(--color-bg-light);
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+  font-weight: 700;
+}
+
+.portal-content { flex: 1; padding: 28px 30px; min-width: 0; }
+h2.portal-heading { font-size: 22px; font-weight: 700; text-transform: none; margin-bottom: 4px; }
+p.portal-subheading { font-size: 14px; color: #666; margin-bottom: 24px; }
+
+/* Alerts */
+.portal-alert {
+  padding: 13px 16px;
+  border-radius: var(--border-radius-card);
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.portal-alert--pending { background: #fff8e1; border: 1px solid #ffe082; color: #795548; }
+.portal-alert--expired { background: #fbe9e7; border: 1px solid #ffab91; color: #bf360c; }
+.portal-alert--info    { background: #e3f2fd; border: 1px solid #90caf9; color: #0d47a1; }
+.portal-alert a { color: inherit; font-weight: 700; text-decoration: underline; }
+
+/* Member status card */
+.member-status-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-card);
+  padding: 24px;
+}
+.member-status-card__avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 20px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.member-status-card__name { font-size: 16px; font-weight: 700; text-transform: none; margin-bottom: 14px; }
+.member-status-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding: 7px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.member-status-card__row:last-child { border-bottom: none; }
+.member-status-card__label { color: #888; }
+
+/* Quick links grid */
+.portal-quick-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.portal-quick-link {
+  display: block;
+  background: var(--color-white);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-card);
+  padding: 18px;
+  text-decoration: none;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.portal-quick-link:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.07); border-color: rgba(31,61,140,0.3); }
+.portal-quick-link__title { font-size: 14px; font-weight: 700; color: var(--color-body); text-transform: none; margin-bottom: 4px; }
+.portal-quick-link__desc  { font-size: 12px; color: #888; margin: 0; line-height: 1.4; }
+
+@media (max-width: 767px) {
+  .portal-header { padding: 12px 16px; }
+  .portal-header__name { display: none; }
+  .portal-body { flex-direction: column; }
+  .portal-nav { width: 100%; min-height: unset; border-right: none; border-bottom: 1px solid var(--color-card-border); padding: 0; position: static; overflow-x: auto; }
+  .portal-nav ul { display: flex; flex-direction: row; }
+  .portal-nav__link { padding: 11px 16px; border-left: none; border-bottom: 3px solid transparent; white-space: nowrap; font-size: 13px; }
+  .portal-nav__link--active { border-left-color: transparent; border-bottom-color: var(--color-primary); background: transparent; }
+  .portal-content { padding: 20px 16px; }
+  .portal-quick-links { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 991px) {

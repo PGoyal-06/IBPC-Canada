@@ -8,10 +8,10 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-# Clean URL routing: /slug → /pages/slug.php
+# Clean URL routing: /slug or /slug/subpage → /pages/slug.php or /pages/slug/subpage.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([a-zA-Z0-9\-]+)/?$ /pages/$1.php [L,QSA]
+RewriteRule ^([a-zA-Z0-9\-]+(?:/[a-zA-Z0-9\-]+)*)/?$ /pages/$1.php [L,QSA]
 
 # Deny access to config and includes
 <FilesMatch "^(config\.php)$">

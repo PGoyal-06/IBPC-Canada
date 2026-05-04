@@ -5,7 +5,18 @@
 $pageTitle = 'Member Login — IBPC Canada';
 $pageDescription = 'Login to your IBPC Canada member account to access the member directory, manage your profile, and more.';
 $isHomepage = false;
+
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../includes/functions.php';
+
+if (isLoggedIn()) {
+    redirect('/member-portal');
+}
+
 include __DIR__ . '/../includes/header.php';
+
+$returnTo = getSafeReturnTo($_GET['returnTo'] ?? '');
+$error    = $_GET['error'] ?? '';
 
 $pageHeaderTitle = 'Member Login';
 $pageHeaderIcon  = 'users';
@@ -18,11 +29,23 @@ include __DIR__ . '/../includes/page-header.php';
     <div class="row">
       <div class="col-lg-5 col-md-7 mx-auto">
 
+        <?php if ($error): ?>
+        <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: var(--border-radius-card); padding: 14px 18px; margin-bottom: 20px; font-size: 14px; color: #856404;">
+          <?php if ($error === 'invalid'): ?>
+            Invalid email or password. Please try again.
+          <?php else: ?>
+            Please enter your email and password.
+          <?php endif; ?>
+        </div>
+        <?php endif; ?>
+
         <div style="background: var(--color-white); border: 1px solid var(--color-card-border); border-radius: var(--border-radius-card); padding: 40px; margin-bottom: 30px;">
           <h2 class="section-label">Members Area</h2>
           <h3 class="section-title" style="font-size: 28px;">Sign In</h3>
 
           <form id="loginForm" method="POST" action="/api/login.php" novalidate>
+            <input type="hidden" name="returnTo" value="<?php echo e($returnTo); ?>">
+
             <div class="form-group" style="margin-bottom: 20px;">
               <label for="login_email" style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 5px;">Email Address *</label>
               <input type="email" id="login_email" name="email" required
@@ -48,7 +71,7 @@ include __DIR__ . '/../includes/page-header.php';
 
         <div style="text-align: center; font-size: 14px; color: #666;">
           Not a member yet?
-          <a href="/membership-application" style="color: var(--color-primary); font-weight: 600;">Apply for Membership</a>
+          <a href="/register" style="color: var(--color-primary); font-weight: 600;">Create an Account</a>
         </div>
 
       </div>

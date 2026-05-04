@@ -183,49 +183,49 @@ include __DIR__ . '/../includes/page-header.php';
               </h5>
               <div id="nominee_blocks">
                 <?php for ($i = 1; $i <= 4; $i++): ?>
-                  <div class="nominee-block" id="nominee_block_<?php echo $i; ?>"
-                    style="display: none; margin-bottom: 25px; padding: 15px; background: #f9f9f9; border-radius: 8px;">
-                    <h6 style="margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Nominee
-                      #<?php echo $i; ?></h6>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>Nominee Full Name *</label>
-                          <input type="text" name="nominee_<?php echo $i; ?>_name"
-                            class="form-control nominee-field-<?php echo $i; ?>">
+                    <div class="nominee-block" id="nominee_block_<?php echo $i; ?>"
+                      style="display: none; margin-bottom: 25px; padding: 15px; background: #f9f9f9; border-radius: 8px;">
+                      <h6 style="margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Nominee
+                        #<?php echo $i; ?></h6>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Nominee Full Name *</label>
+                            <input type="text" name="nominee_<?php echo $i; ?>_name"
+                              class="form-control nominee-field-<?php echo $i; ?>">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Nominee Designation *</label>
+                            <input type="text" name="nominee_<?php echo $i; ?>_designation"
+                              class="form-control nominee-field-<?php echo $i; ?>">
+                          </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>Nominee Designation *</label>
-                          <input type="text" name="nominee_<?php echo $i; ?>_designation"
-                            class="form-control nominee-field-<?php echo $i; ?>">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="upload-zone" for="nominee_<?php echo $i; ?>_id">
+                              <i class="fas fa-id-badge"></i>
+                              <span><strong>Nominee Government-Issued ID Copy *</strong><em>PDF, JPG, PNG — max 5 MB</em></span>
+                              <input type="file" id="nominee_<?php echo $i; ?>_id" name="nominee_<?php echo $i; ?>_id"
+                                accept=".pdf,.jpg,.jpeg,.png" class="upload-zone-input nominee-field-<?php echo $i; ?>">
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="upload-zone" for="nominee_<?php echo $i; ?>_photo">
+                              <i class="fas fa-user-circle"></i>
+                              <span><strong>Nominee Profile Photo *</strong><em>JPG, PNG, WEBP — max 5 MB</em></span>
+                              <input type="file" id="nominee_<?php echo $i; ?>_photo" name="nominee_<?php echo $i; ?>_photo"
+                                accept=".jpg,.jpeg,.png,.webp" class="upload-zone-input nominee-field-<?php echo $i; ?>">
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="upload-zone" for="nominee_<?php echo $i; ?>_id">
-                            <i class="fas fa-id-badge"></i>
-                            <span><strong>Nominee Government-Issued ID Copy *</strong><em>PDF, JPG, PNG — max 5 MB</em></span>
-                            <input type="file" id="nominee_<?php echo $i; ?>_id" name="nominee_<?php echo $i; ?>_id"
-                              accept=".pdf,.jpg,.jpeg,.png" class="upload-zone-input nominee-field-<?php echo $i; ?>">
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="upload-zone" for="nominee_<?php echo $i; ?>_photo">
-                            <i class="fas fa-user-circle"></i>
-                            <span><strong>Nominee Profile Photo *</strong><em>JPG, PNG, WEBP — max 5 MB</em></span>
-                            <input type="file" id="nominee_<?php echo $i; ?>_photo" name="nominee_<?php echo $i; ?>_photo"
-                              accept=".jpg,.jpeg,.png,.webp" class="upload-zone-input nominee-field-<?php echo $i; ?>">
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 <?php endfor; ?>
               </div>
             </div>

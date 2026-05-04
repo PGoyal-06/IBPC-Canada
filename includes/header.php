@@ -4,6 +4,9 @@
  * Usage: include this at the top of every page.
  * Set $pageTitle, $pageDescription, $isHomepage before including.
  */
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/functions.php';
 
@@ -140,7 +143,11 @@ $navbarClass = $isHomepage ? 'nav-bar transparent' : 'nav-bar active';
     </ul>
 
     <div class="nav-right">
-      <a href="/login" class="btn-1 btn-member-login">Member Login</a>
+      <?php if (isLoggedIn()): ?>
+        <a href="/member-portal" class="btn-1 btn-member-login">Member Portal</a>
+      <?php else: ?>
+        <a href="/login" class="btn-1 btn-member-login">Member Login</a>
+      <?php endif; ?>
       <button class="search-toggle" aria-label="Search">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>

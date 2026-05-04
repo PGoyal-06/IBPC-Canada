@@ -3,6 +3,10 @@
  * IBPC Canada — Helper Functions
  */
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 /**
  * Sanitize user input for display.
  */
@@ -60,6 +64,38 @@ function isLoggedIn() {
 function redirect($url) {
     header('Location: ' . $url);
     exit;
+}
+
+/**
+ * Return a validated internal portal path, or the fallback /member-portal.
+ * Blocks external URLs, protocol-relative paths, and non-portal paths.
+ */
+function getSafeReturnTo($returnTo) {
+    $fallback = '/member-portal';
+    $allowed  = ['/member-portal', '/member-portal/profile', '/member-portal/events'];
+
+    if (!$returnTo || !is_string($returnTo)) {
+        return $fallback;
+    }
+    if ($returnTo[0] !== '/' || strpos($returnTo, '//') === 0) {
+        return $fallback;
+    }
+    foreach ($allowed as $path) {
+        if ($returnTo === $path || strpos($returnTo, $path . '?') === 0) {
+            return $returnTo;
+        }
+    }
+    return $fallback;
+}
+
+/**
+ * Redirect to login if the user is not authenticated, preserving the current URL as returnTo.
+ */
+function requireLogin() {
+    if (!isLoggedIn()) {
+        $current = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        redirect('/login?' . http_build_query(['returnTo' => $current]));
+    }
 }
 
 /**
