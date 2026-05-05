@@ -22,8 +22,18 @@ if ($uri === '/' || $uri === '/index.php') {
 // Remove trailing slash
 $uri = rtrim($uri, '/');
 
-// Clean URL → /pages/slug.php
+// Clean URL → /pages/slug.php or /api/slug.php
 $slug = ltrim($uri, '/');
+
+// Handle API routes
+if (strpos($slug, 'api/') === 0) {
+    $apiPath = __DIR__ . '/' . $slug . '.php';
+    if (file_exists($apiPath)) {
+        require $apiPath;
+        return true;
+    }
+}
+
 $pagePath = __DIR__ . '/pages/' . $slug . '.php';
 
 if (file_exists($pagePath)) {

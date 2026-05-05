@@ -39,6 +39,15 @@ include __DIR__ . '/../includes/page-header.php';
         </div>
         <?php endif; ?>
 
+        <?php 
+        $sessionMsg = $_SESSION['login_message'] ?? '';
+        unset($_SESSION['login_message']);
+        if ($sessionMsg): ?>
+        <div style="background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: var(--border-radius-card); padding: 14px 18px; margin-bottom: 20px; font-size: 14px; color: #2e7d32;">
+          <?php echo htmlspecialchars($sessionMsg); ?>
+        </div>
+        <?php endif; ?>
+
         <div style="background: var(--color-white); border: 1px solid var(--color-card-border); border-radius: var(--border-radius-card); padding: 40px; margin-bottom: 30px;">
           <h2 class="section-label">Members Area</h2>
           <h3 class="section-title" style="font-size: 28px;">Sign In</h3>
@@ -62,7 +71,7 @@ include __DIR__ . '/../includes/page-header.php';
               <label style="display: flex; align-items: center; gap: 8px; font-weight: 400; cursor: pointer;">
                 <input type="checkbox" name="remember_me"> Remember me
               </label>
-              <a href="#" style="color: var(--color-primary);">Forgot password?</a>
+              <a href="/forgot-password" style="color: var(--color-primary);">Forgot password?</a>
             </div>
 
             <button type="submit" class="btn-1" style="width: 100%; text-align: center;">Sign In</button>
